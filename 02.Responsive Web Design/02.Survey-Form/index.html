@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap" rel="stylesheet">
+    <title>FreeCodeCamp - Survey Code</title>
+</head>
+<style>
+
+    html,body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Darker Grotesque', sans-serif;
+    }
+
+    h1{
+        text-align: center;
+        color: white;
+    }
+
+    p#description{
+        text-align: center; 
+        font-size: 26px;
+        padding: 2%;
+        font-weight: bold;
+    }
+
+    .MainContainer{
+        display: grid;
+        grid-template-columns: [Column1].5fr [Column2]5fr [Column3].5fr;
+        grid-template-rows: [Row1].1fr [Row2]1fr [Row3].1fr;
+        background-image: url('https://images.unsplash.com/photo-1564111762330-79c8d4bb852c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80');
+    }
+
+    .InsideContainer{
+        display: grid;
+        grid-template-columns: [Column1].1fr [Column2]3fr [Column3].1fr;
+        grid-template-rows: [Row1].1fr [Row2]1fr [Row3].1fr;
+        background-color: white;
+        color: black;
+        font-size: 22px;
+        text-align: center;
+        -webkit-box-shadow: 11px 5px 10px -6px rgba(247,244,247,1);
+        -moz-box-shadow: 11px 5px 10px -6px rgba(247,244,247,1);
+        box-shadow: 11px 5px 10px -6px rgba(247,244,247,1);
+    }
+
+    #survey-form{
+        display: grid;
+        grid-template-columns: [Column1].2fr [Column2]1fr [Column3].2fr [Column4]1fr [Column5].2fr;
+        grid-template-rows: [Row1].1fr [Row2].1fr [Row3].1fr [Row4].1fr [Row5].1fr [Row6].1fr [Row7].1fr [Row8].5fr [Row9].1fr;
+    }
+
+    .CenterPadding{
+        display: grid;
+        grid-template-columns: [Column1]1fr;
+        grid-template-rows: [Row1].5fr [Row2].1fr [Row3].1fr;
+    }
+
+    #survey-form input[type=submit]{
+        font-family: 'Darker Grotesque', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        background-color: #006400;
+    }
+
+    #survey-form input[type=submit]:hover{
+        background-color: #ff9c2a;
+        cursor: pointer;
+    }
+
+    #survey-form input[type=submit]:focus{
+        background-color: #ff9c2a;
+    }
+
+    #survey-form input{
+        font-family: 'Darker Grotesque', sans-serif;
+        font-size: 22px;
+    }
+
+    .CenterPadding select{
+        font-family: 'Darker Grotesque', sans-serif;
+        font-size: 18px;
+    }
+
+    .CenterPadding textarea{
+        width: 100%;
+        font-family: 'Darker Grotesque', sans-serif;
+        font-size: 18px;
+    }
+
+    .CenterPaddingInputs{
+        display: grid;
+        grid-template-columns: [Column1]1fr;
+        grid-template-rows: [Row1].5fr [Row2].1fr [Row3].1fr;
+        text-align: left;
+    }
+
+
+</style>
+<body>
+        
+<main class = "MainContainer">
+    <div></div>
+    <div><h1 id = "title">Survey Form</h1></div>
+    <div></div>
+    <div></div>
+    <div>
+        <div class = "InsideContainer">
+
+            <div></div>
+            <div>
+                    <p id = "description">Let us know how we can improve freeCodeCamp</p>
+            </div>
+            <div></div>
+
+            <div></div>
+            <div>
+                <form action="" method="GET" id = "survey-form">
+                    <div></div>
+                    <div><label for="name" id = "name-label"><p>*Name: </p></label></div>
+                    <div></div>
+                    <div class="CenterPadding">
+                        <div></div>
+                        <div>
+                            <input type="text" name="name" id = "name" placeholder="Enter your name" required>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div></div>
+
+                    <div></div>
+                    <div><label for="Email" id = "email-label"><p>*Email: </p></label></div>
+                    <div></div>
+                    <div class="CenterPadding">
+                        <div></div>
+                        <div><input type="email" name="Email" id = "email" placeholder="Enter your email" required></div>
+                        <div></div>
+                    </div>
+                    <div></div>
+
+                    <div></div>
+                    <div><label for="Age" id = "number-label"><p>*Age: </p></label></div>
+                    <div></div>
+                    <div class="CenterPadding">
+                        <div></div>
+                        <div><input type="number" name="Age" min="0" max="100" placeholder="Age" id = "number" required></div>
+                        <div></div>
+                        
+                    </div>
+                    <div></div>
+
+                    <div></div>
+                    <div><label for="Role"><p>Which option best describe your current role?: </p></label></div>
+                    <div></div>
+                    <div class="CenterPadding">
+                        <div></div>
+                        <div>
+                                <select id = "dropdown">
+                                        <option value = "" disabled>Select an option</option>
+                                        <option value = "Student">Student</option>
+                                        <option value = "Job">Full time job</option>
+                                        <option value = "Learner">Full time Learner</option>
+                                        <option value = "Prefer">Prefer not to say</option>
+                                        <option value = "Other">Other</option>
+                                    </select>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div></div>
+
+                    <div></div>
+                    <div><label for="Recommend"><p>How likely is that you would recommend freeCodeCamp to a friend?: </p></label></div>
+                    <div></div>
+                    <div class="CenterPadding">
+                        <div></div>
+                        <div>
+                                <input type="radio" name="Recommend" value = "Definitely" checked><label>Definitely</label>
+                                <input type="radio" name="Recommend" value = "Maybe"><label>Maybe</label>
+                                <input type="radio" name="Recommend" value = "Not sure"><label>Not sure</label>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div></div>
+
+                    <div></div>
+                    <div><label for="Most"><p>What do you like most in FCC?: </p></label></div>
+                    <div></div>
+                    <div class="CenterPadding">
+                        <div></div>
+                        <div>
+                                <select id = "dropdown">
+                                        <option value = "" >Select an option</option>
+                                        <option value = "Challenges">Challenges</option>
+                                        <option value = "Projects">Projects</option>
+                                        <option value = "Community">Community</option>
+                                        <option value = "Open Source">Open Source</option>
+                                </select>
+
+                        </div>
+                        <div></div>
+                        
+                    </div>
+                    <div></div>
+
+                    <div></div>
+                    <div><label for="Improve"><p>Things that should be improved in the future (Check all that apply): </p></label></div>
+                    <div></div>
+                    <div class="CenterPaddingInputs">
+                        <div></div>
+                        <div><input type="checkbox" name="Front-end" value="Front-end" required><label>Front-end Projects</label></div>
+                        <div><input type="checkbox" name="Back-end" value="Back-end" required><label>Back-end Projects</label></div>
+                        <div><input type="checkbox" name="Data Visualization" value="Data Visualization" required><label>Data Visualization</label></div>
+                        <div><input type="checkbox" name="Challenges" value="Challenges" required><label>Challenges</label></div>
+                        <div><input type="checkbox" name="Open Source Community" value="Open Source Community" required><label>Open Source Community</label></div>
+                        <div><input type="checkbox" name="Gitter help rooms" value="Gitter help rooms" required><label>Gitter help rooms</label></div>
+                        <div><input type="checkbox" name="Videos" value="Videos" required><label>Videos</label></div>
+                        <div><input type="checkbox" name="City Meetups" value="City Meetups" required><label>City Meetups</label></div>
+                        <div><input type="checkbox" name="Wiki" value="Wiki" required><label>Wiki</label></div>
+                        <div><input type="checkbox" name="Forum" value="Forum" required><label>Forum</label></div>
+                        <div><input type="checkbox" name="Additional Courses" value="Additional Courses" required><label>Additional Courses</label></div>
+
+                    </div>
+                    <div></div>
+
+                    <div></div>
+                    <div><label for="Comments"><p>Any comments or Suggestions?: </p></label></div>
+                    <div></div>
+                    <div class="CenterPadding">
+                        <div></div>
+                        <div>
+                                <textarea placeholder="Enter your comment here..."></textarea>
+                        </div>
+                        <div></div>
+                        
+                    </div>
+                    <div></div>
+
+                    <div></div>
+                    <div></div>
+                    <div><input type="submit" value="Submit" id = "submit"></div>
+                    <div></div>
+                    <div></div>
+                    
+                </form>
+            </div>
+            <div></div>
+
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</main>
+</body>
+</html>

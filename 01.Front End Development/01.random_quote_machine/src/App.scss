@@ -1,0 +1,405 @@
+// * {
+//   border: 1px solid red;
+// }
+
+// @media screen and (max-width: 320px){
+//   svg {
+//       width: 120%;
+//       height: 120%;
+//       display: block;
+//       margin: auto
+//   }
+// }
+
+// @media screen and (max-width: 1000px){
+//   svg {
+//       width: 150%;
+//       height: 150%;
+//       display: block;
+//       margin: auto
+//   }
+// }
+
+// @media screen and (max-width: 1200px){
+//   svg {
+//       width: 85%;
+//       height: 85%;
+//       display: block;
+//       margin: auto
+//   }
+// }
+
+html {
+  margin: 0;
+  padding: 0;
+  height: auto;
+
+  .container {
+    .boxquoute {
+      .message {
+        grid-area: message;
+        color: black;
+        border-radius: 5px;
+        font-size: 180%;
+        line-height: 120%;
+        word-wrap: break-word;
+
+        i {
+          margin: 20px;
+        }
+      }
+
+      .author {
+        grid-area: author;
+        color: black;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 130%;
+        word-wrap: break-word;
+      }
+
+      display: grid;
+      grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+      grid-template-rows: auto;
+      grid-template-areas: "message message message message message"
+      "main main main author author"
+      "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare";
+      grid-gap: 10px;
+      gap: 20px;
+      color: black;
+      border-radius: 5px;
+      margin-top: 10px;
+      padding: 20px;
+      font-size: 150%;
+      background-color: rgba(255, 255, 255, 0.178);
+
+      .buttonsshare {
+        display: flex;
+        flex-wrap: wrap;
+        //grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+        grid-area: buttonsshare;
+        gap: 20px; // GAP OPTION
+        justify-content: center;
+        align-items: center;
+        //gap: 2rem 1rem;
+        column-gap: 20px;
+        .buttondivision {
+          display: grid;
+          grid-template-columns: 0.25fr 0.25fr auto 0.25fr;
+          grid-template-rows: auto;
+          grid-template-areas: "bc3 bmessage bmessage bc4";
+          pointer-events: auto;
+          cursor: pointer;
+          font-size: 12px;
+          
+          .bmessage {
+            display: grid;
+            grid-template-columns: 0.25fr 100%;
+            grid-template-rows: auto;
+            grid-template-areas: "b-icon b-name";
+            .b-icon {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 200%;
+            }
+
+            .b-name {
+              font-size: 200%;
+            }
+
+            .button {
+              pointer-events: auto;
+              cursor: pointer;
+              background: #e7e7e7;
+              border: none;
+              //padding: 1.5rem 3rem; // BUG
+              margin: 0;
+              font-family: inherit;
+              font-size: inherit;
+              position: relative;
+              display: inline-block;
+              color: #fff;
+              width: 100%;
+            }
+
+            .button::before,
+            .button::after {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+
+            .button--share {
+              background: none;
+              font-family: "Cinzel";
+              padding: 0.7em 2.5em;
+            }
+
+            .button--share span {
+              display: inline-block;
+              position: relative;
+              color: #fff;
+            }
+
+            .button--share::before {
+              content: "";
+              background: #000;
+              transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+            }
+
+            .button--share:hover::before {
+              transform: scale3d(0.9, 0.8, 1);
+            }
+
+            .button--share::after {
+              content: "";
+              border: 1px solid #fff;
+              transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+              border-radius: 0px;
+              transform: scale3d(0.85, 0.65, 1);
+              z-index: -1;
+            }
+
+            .button--share:hover::after {
+              transform: scale3d(1, 1, 1);
+            }
+          }
+        }
+      }
+    }
+
+    .butttonleft {
+      .butleft {
+        .button {
+          pointer-events: auto;
+          cursor: pointer;
+          background: #e7e7e7;
+          border: none;
+          padding: 1.5rem 3rem; // BUG
+          margin: 0;
+          font-family: inherit;
+          font-size: inherit;
+          position: relative;
+          display: inline-block;
+          color: #fff;
+          width: 100%; //?
+        }
+
+        .button::before,
+        .button::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        // Left
+        .button--antheleft {
+          font-family: bely-display, sans-serif;
+          color: #fff;
+          background: none;
+        }
+
+        .button--antheleft::before {
+          content: "";
+          background: #000;
+          -webkit-clip-path: polygon(100% 0%,
+              0% 0%,
+              0% 50%,
+              0% 100%,
+              100% 100%);
+          clip-path: polygon(100% 0%, 0% 0%, 0% 50%, 0% 100%, 100% 100%);
+          transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1),
+            -webkit-clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+
+        .button--antheleft:hover::before {
+          background: #fff;
+          -webkit-clip-path: polygon(100% 0%,
+              25% 0%,
+              0% 50%,
+              25% 100%,
+              100% 100%);
+          clip-path: polygon(100% 0%, 25% 0%, 0% 50%, 25% 100%, 100% 100%);
+        }
+
+        .button--antheleft span {
+          display: block;
+          mix-blend-mode: difference;
+          transition: transform 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+
+        .button--antheleft:hover span {
+          transform: translate3d(10px, 0, 0);
+        }
+      }
+
+      display: grid;
+      grid-template-columns: 0.6fr auto 0.6fr;
+      grid-template-rows: auto;
+      grid-template-areas: "bleft1 butleft bleft2";
+      grid-area: butttonleft;
+    }
+
+    .buttonright {
+      .button {
+        pointer-events: auto;
+        cursor: pointer;
+        background: #e7e7e7;
+        border: none;
+        padding: 1.5rem 3rem; // BUG
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        width: 100%; //?
+      }
+
+      .button::before,
+      .button::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .button--antheright {
+        font-family: bely-display, sans-serif;
+        color: #fff;
+        background: none;
+      }
+
+      .button--antheright::before {
+        content: "";
+        background: #000;
+        -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+        transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1),
+          -webkit-clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+      }
+
+      .button--antheright:hover::before {
+        background: #fff;
+        -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+      }
+
+      .button--antheright span {
+        display: block;
+        mix-blend-mode: difference;
+        transition: transform 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+      }
+
+      .button--antheright:hover span {
+        transform: translate3d(-10px, 0, 0);
+      }
+
+      display: grid;
+      grid-template-columns: 0.6fr auto 0.6fr;
+      grid-template-rows: auto;
+      grid-template-areas: "bright1 butright bright2";
+      grid-area: buttonright;
+    }
+
+    .imagesvg {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "svgside1 svgside2 svgside3";
+      grid-gap: 10px;
+      gap: 10px;
+      grid-area: imagesvg;
+
+      .svgside2 {
+        .Tully {
+          width: 88%;
+          height: 88%;
+          display: block;
+          margin: auto;
+          background-color: rgba(255, 255, 255, 0.178);
+        }
+
+        .Tyrell {
+          width: 78%;
+          height: 78%;
+          display: block;
+          margin: auto;
+          background-color: rgba(255, 255, 255, 0.178);
+        }
+
+        .Martell {
+          width: 70%;
+          height: 70%;
+          display: block;
+          margin: auto;
+          background-color: rgba(255, 255, 255, 0.178);
+        }
+
+        .Stark {
+          width: 84%;
+          height: 84%;
+          display: block;
+          margin: auto;
+          background-color: rgba(255, 255, 255, 0.178);
+        }
+
+        .Lannister {
+          width: 72%;
+          height: 72%;
+          display: block;
+          margin: auto;
+          background-color: rgba(255, 255, 255, 0.178);
+        }
+
+        .Greyjoy {
+          width: 83%;
+          height: 83%;
+          display: block;
+          margin: auto;
+          background-color: rgba(255, 255, 255, 0.178);
+        }
+
+        .Baratheon {
+          width: 70%;
+          height: 70%;
+          display: block;
+          margin: auto;
+          background-color: rgba(255, 255, 255, 0.178);
+        }
+
+        .Arryn {
+          width: 78%;
+          height: 78%;
+          display: block;
+          margin: auto;
+          background-color: rgba(255, 255, 255, 0.178);
+        }
+
+        .Targaryen {
+          width: 83%;
+          height: 83%;
+          display: block;
+          margin: auto;
+          background-color: rgba(255, 255, 255, 0.178);
+        }
+      }
+    }
+
+    display: grid;
+    grid-template-columns: 0.25fr auto 0.25fr;
+    grid-template-rows: auto;
+    grid-template-areas: "column1 boxquoute column2"
+    "butttonleft imagesvg buttonright"
+    "column3 imagesvg column4";
+    grid-gap: 10px;
+    gap: 10px;
+    height: 100%;
+  }
+}
