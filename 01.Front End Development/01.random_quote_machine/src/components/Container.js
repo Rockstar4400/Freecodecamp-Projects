@@ -193,7 +193,7 @@ class Container extends React.Component {
                 <ButtonShare className="bmessage">
                   <div className="button button--share">
                     <span>
-                    <a href="https://github.com/Rockstar4400/03.Front-End-Development/tree/develop/01.random_quote_machine">
+                    <a href="https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine">
                       <div className="bmessage">
                         <div className="b-icon">
                           <i className="github square icon"></i>

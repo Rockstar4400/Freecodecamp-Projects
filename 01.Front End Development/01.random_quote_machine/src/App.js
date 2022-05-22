@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-
+import 'semantic-ui-css/semantic.min.css'
 import Container from './components/Container';
 
 class App extends React.Component {
