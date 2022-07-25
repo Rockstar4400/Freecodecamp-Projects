@@ -1,162 +1,313 @@
-
-// * {
-//   border: 1px solid red;
-// }
-
-// @media screen and (max-width: 320px){
-//   svg {
-//       width: 120%;
-//       height: 120%;
-//       display: block;
-//       margin: auto
-//   }
-// }
-
-// @media screen and (max-width: 1000px){
-//   svg {
-//       width: 150%;
-//       height: 150%;
-//       display: block;
-//       margin: auto
-//   }
-// }
-
-// @media screen and (max-width: 1200px){
-//   svg {
-//       width: 85%;
-//       height: 85%;
-//       display: block;
-//       margin: auto
-//   }
-// }
-
+@import "include-media";
 // Color Variables
 $svg-bg-color: rgba(255, 255, 255, 0.178);
 
 // Media-queries Variables
 $breakpoints: (
-                'phone': 300px,
-                'table': 600px,
-                'desktop': 900px
-                )!default;
+  "phone": 300px,
+  "tablet": 400px,
+  "desktop": 1080px,
+) !default;
 
 //Media-queries
-@include media('>phone', '<tablet'){
+@include media(">phone", "<tablet") {
   html {
     .container {
-        .butttonleft {
-          .butleft {
-            .button {
-              padding: 1.5rem .5rem !important;
+      grid-template-rows: auto auto auto 100px !important;
+      .boxquoute {
+        grid-template-areas:
+          "message message message message message"
+          "author author author author author"
+          "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
+          .buttonsshare {
+            flex-wrap: wrap !important;
+            .buttondivision {
+                pointer-events: auto;
+                cursor: pointer;
+                border: none;
+                margin: 0;
+                font-family: inherit;
+                font-size: inherit;
+                position: relative;
+                display: inline-block;
+                color: #fff;
+                width: 100%;
+              .button::before,
+              .button::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+
+              .button--share {
+                background: none;
+                font-family: "Cinzel";
+                padding: 0.7em 2.5em;
+              }
+
+              .button--share span {
+                display: inline-block;
+                position: relative;
+                color: #fff;
+              }
+
+              .button--share::before {
+                content: "";
+                background: #000;
+                transition: 
+                transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+              }
+
+              .button--share:hover::before {
+                transform: scale3d(0.9, 0.8, 1);
+              }
+
+              .button--share::after {
+                content: "";
+                border: 1px solid #fff;
+                transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+                border-radius: 0px;
+                transform: scale3d(0.85, 0.65, 1);
+                z-index: -1;
+              }
+
+              .button--share:hover::after {
+                transform: scale3d(1, 1, 1);
+              }
             }
+          }  
+      }
+
+      .butttonleft {
+        .butleft {
+          .button {
+            padding: 1.5rem 0.5rem !important;
           }
-        
         }
-        .buttonright {
-          .butright{
-            .button {
-              padding: 1.5rem .5rem !important;
-            }
+      }
+
+      .buttonright {
+        .butright {
+          .button {
+            padding: 1.5rem 0.5rem !important;
           }
         }
+      }
+
+      .imagesvg {
+        .svgside2 {
+          .Tully {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+          .Tyrell {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+          .Martell {
+            width: 87%  !important;
+            height: 87%  !important;
+          }
+
+          .Stark {
+            width: 100%  !important;
+            height: 100%  !important;
+          }
+
+          .Lannister {
+            width: 100%  !important;
+            height: 100%  !important;
+          }
+
+          .Greyjoy {
+            width: 100%  !important;
+            height: 100%  !important;
+          }
+
+          .Baratheon {
+            width: 100%  !important;
+            height: 100% !important;
+          }
+
+          .Arryn {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+          .Targaryen {
+            width: 100%  !important;
+            height: 100%  !important;
+          }
+        }
+      }
+      .logo{
+        margin-top: 60px;
+        h4{
+          text-align: center;
+        }
+        .react{
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: auto;
+        }
+      }
     }
   }
 }
 
-html {
-  margin: 0;
-  padding: 0;
-  height: auto;
+@include media(">tablet", "<1030px"){
+  html {
+    .container {
+      grid-template-rows: auto auto auto 100px !important;
+      .boxquoute {
+        grid-template-areas:
+        "message message message message message"
+        "main main author author author"
+        "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
+         .buttonsshare {
+          flex-wrap: wrap !important;
+          .buttondivision {
+            pointer-events: auto;
+            cursor: pointer;
+            border: none;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            width: 100%;
+          .button::before,
+          .button::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
 
-  .container {
-    display: grid;
-    grid-template-columns: 0.25fr auto 0.25fr;
-    grid-template-rows: auto;
-    grid-template-areas: "column1 boxquoute column2"
-    "butttonleft imagesvg buttonright"
-    "column3 imagesvg column4";
-    grid-gap: 10px;
-    gap: 10px;
-    height: 100%;
+          .button--share {
+            background: none;
+            font-family: "Cinzel";
+            padding: 0.7em 2.5em;
+          }
 
-    .boxquoute {
-      .message {
-        grid-area: message;
-        color: black;
-        border-radius: 5px;
-        font-size: 180%;
-        line-height: 120%;
-        word-wrap: break-word;
-        i {
-          margin: 20px;
+          .button--share span {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+          }
+
+          .button--share::before {
+            content: "";
+            background: #000;
+            transition: 
+            transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          }
+
+          .button--share:hover::before {
+            transform: scale3d(0.9, 0.8, 1);
+          }
+
+          .button--share::after {
+            content: "";
+            border: 1px solid #fff;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+            border-radius: 0px;
+            transform: scale3d(0.85, 0.65, 1);
+            z-index: -1;
+          }
+
+          .button--share:hover::after {
+            transform: scale3d(1, 1, 1);
+          }
+        }
+      }  
+      }
+
+      .imagesvg {
+        .svgside2 {
+          .Tully {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+          .Tyrell {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+          .Martell {
+            width: 87%  !important;
+            height: 87%  !important;
+          }
+
+          .Stark {
+            width: 100%  !important;
+            height: 100%  !important;
+          }
+
+          .Lannister {
+            width: 100%  !important;
+            height: 100%  !important;
+          }
+
+          .Greyjoy {
+            width: 100%  !important;
+            height: 100%  !important;
+          }
+
+          .Baratheon {
+            width: 100%  !important;
+            height: 100% !important;
+          }
+
+          .Arryn {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+          .Targaryen {
+            width: 100%  !important;
+            height: 100%  !important;
+          }
         }
       }
 
-      .author {
-        grid-area: author;
-        color: black;
-        border-radius: 5px;
-        padding: 20px;
-        font-size: 130%;
-        word-wrap: break-word;
+      .logo{
+        margin-top: 70px;
+        h4{
+          text-align: center;
+        }
+        .react{
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: auto;
+        }
       }
+    }
+  }
+}
 
-      display: grid;
-      grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
-      grid-template-rows: auto;
-      grid-template-areas: "message message message message message"
-      "main main main author author"
-      "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare";
-      grid-gap: 10px;
-      gap: 20px;
-      color: black;
-      border-radius: 5px;
-      margin-top: 10px;
-      padding: 20px;
-      font-size: 150%;
-      background-color: rgba(255, 255, 255, 0.178);
-
-      .buttonsshare {
-        display: flex;
-        flex-wrap: wrap;
-        //grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
-        grid-area: buttonsshare;
-        gap: 20px; // GAP OPTION
-        justify-content: center;
-        align-items: center;
-        //gap: 2rem 1rem;
-        column-gap: 20px;
-        .buttondivision {
-          display: grid;
-          grid-template-columns: 0.25fr 0.25fr auto 0.25fr;
-          grid-template-rows: auto;
-          grid-template-areas: "bc3 bmessage bmessage bc4";
-          pointer-events: auto;
-          cursor: pointer;
-          font-size: 12px;
-          
-          .bmessage {
-            display: grid;
-            grid-template-columns: 0.25fr 100%;
-            grid-template-rows: auto;
-            grid-template-areas: "b-icon b-name";
-            .b-icon {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              font-size: 200%;
-            }
-
-            .b-name {
-              font-size: 200%;
-            }
-
+@include media(">desktop", "<1400px" ){
+  html {
+    .container {
+      grid-template-rows: auto auto auto 200px !important;
+      .boxquoute {
+        .buttonsshare {
+          flex-wrap: wrap !important;
+          .buttondivision {
             .button {
               pointer-events: auto;
               cursor: pointer;
               background: #e7e7e7;
               border: none;
-              //padding: 1.5rem 3rem; // BUG
               margin: 0;
               font-family: inherit;
               font-size: inherit;
@@ -209,11 +360,476 @@ html {
             .button--share:hover::after {
               transform: scale3d(1, 1, 1);
             }
+            
+          }
+        }
+      }
+
+      .imagesvg {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "svgside1 svgside2 svgside3";
+        grid-gap: 10px;
+        gap: 10px;
+        grid-area: imagesvg;
+        height: auto;
+        .svgside2 {
+          .Tully {
+            width: 88%;
+            height: 88%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Tyrell {
+            width: 78%;
+            height: 78%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Martell {
+            width: 70%;
+            height: 70%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Stark {
+            width: 84%;
+            height: 84%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Lannister {
+            width: 72%;
+            height: 72%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Greyjoy {
+            width: 83%;
+            height: 83%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Baratheon {
+            width: 70%;
+            height: 70%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Arryn {
+            width: 78%;
+            height: 78%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Targaryen {
+            width: 83%;
+            height: 83%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+        }
+      }
+
+      .logo{
+        margin-top: 120px;
+        h4{
+          text-align: center;
+        }
+        .react{
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: auto;
+        }
+      }
+    }
+  }
+}
+
+@include media(">desktop", "<1750px" ){
+  html {
+    .container {
+      grid-template-rows: auto auto auto 50px !important;
+      .boxquoute {
+        grid-template-areas:
+          "message message message message message"
+          "main main main author author"
+          "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
+          
+      }
+      .buttonsshare {
+        flex-wrap: wrap !important;
+        .buttondivision {
+          .button {
+            pointer-events: auto;
+            cursor: pointer;
+            background: #e7e7e7;
+            border: none;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            width: 100%;
+          }
+
+          .button::before,
+          .button::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          .button--share {
+            background: none;
+            font-family: "Cinzel";
+            padding: 0.7em 2.5em;
+          }
+
+          .button--share span {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+          }
+
+          .button--share::before {
+            content: "";
+            background: #000;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          }
+
+          .button--share:hover::before {
+            transform: scale3d(0.9, 0.8, 1);
+          }
+
+          .button--share::after {
+            content: "";
+            border: 1px solid #fff;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+            border-radius: 0px;
+            transform: scale3d(0.85, 0.65, 1);
+            z-index: -1;
+          }
+
+          .button--share:hover::after {
+            transform: scale3d(1, 1, 1);
+          }
+          
+        }
+      }
+
+      .imagesvg {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "svgside1 svgside2 svgside3";
+        grid-gap: 10px;
+        gap: 10px;
+        grid-area: imagesvg;
+        height: auto;
+        .svgside2 {
+          .Tully {
+            width: 88%;
+            height: 88%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Tyrell {
+            width: 78%;
+            height: 78%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Martell {
+            width: 70%;
+            height: 70%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Stark {
+            width: 84%;
+            height: 84%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Lannister {
+            width: 72%;
+            height: 72%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Greyjoy {
+            width: 83%;
+            height: 83%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Baratheon {
+            width: 70%;
+            height: 70%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Arryn {
+            width: 78%;
+            height: 78%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+  
+          .Targaryen {
+            width: 83%;
+            height: 83%;
+            display: block;
+            margin: auto;
+            background-color: $svg-bg-color;
+          }
+        }
+      }
+
+      .logo{
+        margin-top: -20px;
+        h4{
+          text-align: center;
+        }
+        .react{
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: auto;
+        }
+      }
+    }
+  }
+}
+
+@include media(">1750px"){
+  html {
+    .container {
+      grid-template-rows: auto auto auto 100px !important;
+      .boxquoute {
+        grid-template-areas:
+          "message message message message message"
+          "main main main author author"
+          "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
+          
+          .buttondivision {
+            .bmessage {
+              margin-top: 20px;
+              .b-icon {
+                margin-top: 10px;
+                font-size: 300% !important;
+              }
+              .b-name {
+                font-size: 250% !important;
+              }
+
+              .button {
+              pointer-events: auto;
+              cursor: pointer;
+              background: #e7e7e7;
+              border: none;
+              margin: 0;
+              font-family: inherit;
+              font-size: inherit;
+              position: relative;
+              display: inline-block;
+              color: #fff;
+              width: 100%;
+            }
+
+            .button::before,
+            .button::after {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 110% !important;
+              height: 110% !important;
+            }
+
+            .button--share {
+              background: none;
+              font-family: "Cinzel";
+              padding: 0.7em 2.5em;
+            }
+
+            .button--share span {
+              display: inline-block;
+              position: relative;
+              color: #fff;
+            }
+
+            .button--share::before {
+              content: "";
+              background: #000;
+              transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+            }
+
+            .button--share:hover::before {
+              transform: scale3d(0.9, 0.8, 1);
+            }
+
+            .button--share::after {
+              content: "";
+              border: 1px solid #fff;
+              transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+              border-radius: 0px;
+              transform: scale3d(0.85, 0.65, 1);
+              z-index: -1;
+            }
+
+            .button--share:hover::after {
+              transform: scale3d(1, 1, 1);
+            }
+        
+
+            }
+          }
+      }
+      .logo{
+        margin-top: -20px;
+        h4{
+          text-align: center;
+        }
+        .react{
+            width: 50%;
+            height: 50%;
+            display: block;
+            margin: auto;
+        }
+      }
+    }
+  }
+}
+
+
+// Default
+html {
+  margin: 0;
+  padding: 0;
+  height: auto;
+
+  .container {
+    display: grid;
+    grid-template-columns: 0.25fr auto 0.25fr;
+    grid-template-areas:
+      "column1 boxquoute column2"
+      "butttonleft imagesvg buttonright"
+      "column3 imagesvg column4"
+      "column5 logo column6";
+    grid-gap: 10px;
+    //grid-template-rows: auto auto auto 300px !important;
+    .boxquoute {
+      display: grid;
+      grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "message message message message message"
+        "main main main main author"
+        "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare";
+      grid-gap: 10px;
+      gap: 20px;
+      color: black;
+      border-radius: 5px;
+      margin-top: 10px;
+      padding: 20px;
+      font-size: 150%;
+      background-color: rgba(255, 255, 255, 0.178);
+
+      .message {
+        grid-area: message;
+        color: black;
+        border-radius: 5px;
+        font-size: 180%;
+        line-height: 120%;
+        word-wrap: break-word;
+        i {
+          margin: 20px;
+        }
+      }
+
+      .author {
+        grid-area: author;
+        color: black;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 150%;
+        word-wrap: break-word;
+      }
+
+      .buttonsshare {
+        display: flex;
+        grid-area: buttonsshare;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+        .buttondivision {
+          display: grid;
+          grid-template-columns: 0.25fr 0.25fr auto 0.25fr;
+          grid-template-rows: auto;
+          grid-template-areas: "bc3 bmessage bmessage bc4";
+          pointer-events: auto;
+          cursor: pointer;
+          font-size: 12px;
+
+          .bmessage {
+            display: grid;
+            grid-template-columns: 0.25fr 100%;
+            grid-template-rows: auto;
+            grid-template-areas: "b-icon b-name";
+            .b-icon {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 200%;
+            }
+
+            .b-name {
+              font-size: 200%;
+            }
           }
         }
       }
     }
-    
+
     .butttonleft {
       display: grid;
       grid-template-columns: 0.6fr auto 0.6fr;
@@ -255,11 +871,13 @@ html {
         .button--antheleft::before {
           content: "";
           background: #000;
-          -webkit-clip-path: polygon(100% 0%,
-              0% 0%,
-              0% 50%,
-              0% 100%,
-              100% 100%);
+          -webkit-clip-path: polygon(
+            100% 0%,
+            0% 0%,
+            0% 50%,
+            0% 100%,
+            100% 100%
+          );
           clip-path: polygon(100% 0%, 0% 0%, 0% 50%, 0% 100%, 100% 100%);
           transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1),
             -webkit-clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
@@ -267,11 +885,13 @@ html {
 
         .button--antheleft:hover::before {
           background: #fff;
-          -webkit-clip-path: polygon(100% 0%,
-              25% 0%,
-              0% 50%,
-              25% 100%,
-              100% 100%);
+          -webkit-clip-path: polygon(
+            100% 0%,
+            25% 0%,
+            0% 50%,
+            25% 100%,
+            100% 100%
+          );
           clip-path: polygon(100% 0%, 25% 0%, 0% 50%, 25% 100%, 100% 100%);
         }
 
@@ -285,7 +905,6 @@ html {
           transform: translate3d(10px, 0, 0);
         }
       }
-
     }
 
     .buttonright {
@@ -294,7 +913,7 @@ html {
       grid-template-rows: auto;
       grid-template-areas: "bright1 butright bright2";
       grid-area: buttonright;
-      .butright{
+      .butright {
         .button {
           pointer-events: auto;
           cursor: pointer;
@@ -328,7 +947,13 @@ html {
         .button--antheright::before {
           content: "";
           background: #000;
-          -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+          -webkit-clip-path: polygon(
+            0% 0%,
+            100% 0,
+            100% 50%,
+            100% 100%,
+            0% 100%
+          );
           clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
           transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1),
             -webkit-clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
@@ -336,7 +961,13 @@ html {
 
         .button--antheright:hover::before {
           background: #fff;
-          -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+          -webkit-clip-path: polygon(
+            0% 0%,
+            75% 0%,
+            100% 50%,
+            75% 100%,
+            0% 100%
+          );
           clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
         }
 
@@ -360,7 +991,7 @@ html {
       grid-gap: 10px;
       gap: 10px;
       grid-area: imagesvg;
-
+      height: auto;
       .svgside2 {
         .Tully {
           width: 88%;
@@ -435,5 +1066,18 @@ html {
         }
       }
     }
+
+    // .logo{
+    //   margin-top: -20px;
+    //   h4{
+    //     text-align: center;
+    //   }
+    //   .react{
+    //       width: 20%;
+    //       height: 20%;
+    //       display: block;
+    //       margin: auto;
+    //   }
+    // }
   }
 }

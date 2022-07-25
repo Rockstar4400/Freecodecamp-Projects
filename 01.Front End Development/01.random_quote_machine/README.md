@@ -1,10 +1,15 @@
-## Freecodecamp - Front End Development Libraries
-### Build a Random Quote Machine
+# WeatherAxiosApplication
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Getting Started
 
-## Available Scripts
+```
+> npm install
+> npm start
+> add your gist for qoutes and svgs
+```
 
-In the project directory, you can run:
+### Web
+![plot](?raw=true)
 
-### `npm start`
+### Mobile
+![plot](?raw=true)

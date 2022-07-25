@@ -5,6 +5,7 @@ import Image from "./Image";
 import ButtonShare from "./ButtonShare";
 import Message from "./Message";
 import Author from "./Author";
+import Logo from "./Logo";
 
 class Container extends React.Component {
   clickHandler = this.clickHandler.bind(this);
@@ -253,6 +254,12 @@ class Container extends React.Component {
           <div className="column3"></div>
           <div className="imagesvg"></div>
           <div className="column4"></div>
+          <div className="column5"></div>
+          <div className="logo">
+            <h4>Made with:</h4>
+            <Logo className="react" />
+          </div>
+          <div className="column6"></div>
         </div>
       );
     }
