@@ -9,7 +9,7 @@
 ```
 
 ### Web
-![plot](?raw=true)
+![plot](https://github.com/Rockstar4400/Freecodecamp-Projects/blob/main/01.Front%20End%20Development/01.random_quote_machine/src/content/C1Resize.PNG?raw=true)
 
 ### Mobile
-![plot](?raw=true)
+![plot](https://github.com/Rockstar4400/Freecodecamp-Projects/blob/main/01.Front%20End%20Development/01.random_quote_machine/src/content/C2.PNG?raw=true)
