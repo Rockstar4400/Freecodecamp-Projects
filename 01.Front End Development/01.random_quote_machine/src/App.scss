@@ -1,7 +1,7 @@
 
-* {
-  border: 1px solid red;
-}
+// * {
+//   border: 1px solid red;
+// }
 
 // @media screen and (max-width: 320px){
 //   svg {
@@ -30,16 +30,38 @@
 //   }
 // }
 
-// Variables
+// Color Variables
 $svg-bg-color: rgba(255, 255, 255, 0.178);
 
+// Media-queries Variables
+$breakpoints: (
+                'phone': 300px,
+                'table': 600px,
+                'desktop': 900px
+                )!default;
+
 //Media-queries
-@media (min-width: 768px) {
-  html{
-    background: 'linear-gradient(to right, #e66465, #9198e5';
+@include media('>phone', '<tablet'){
+  html {
+    .container {
+        .butttonleft {
+          .butleft {
+            .button {
+              padding: 1.5rem .5rem !important;
+            }
+          }
+        
+        }
+        .buttonright {
+          .butright{
+            .button {
+              padding: 1.5rem .5rem !important;
+            }
+          }
+        }
+    }
   }
 }
-
 
 html {
   margin: 0;
@@ -267,66 +289,67 @@ html {
     }
 
     .buttonright {
-      .button {
-        pointer-events: auto;
-        cursor: pointer;
-        background: #e7e7e7;
-        border: none;
-        padding: 1.5rem 3rem; // BUG
-        margin: 0;
-        font-family: inherit;
-        font-size: inherit;
-        position: relative;
-        display: inline-block;
-        color: #fff;
-        width: 100%; //?
-      }
-
-      .button::before,
-      .button::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .button--antheright {
-        font-family: bely-display, sans-serif;
-        color: #fff;
-        background: none;
-      }
-
-      .button--antheright::before {
-        content: "";
-        background: #000;
-        -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
-        clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
-        transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1),
-          -webkit-clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
-      }
-
-      .button--antheright:hover::before {
-        background: #fff;
-        -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-      }
-
-      .button--antheright span {
-        display: block;
-        mix-blend-mode: difference;
-        transition: transform 0.4s cubic-bezier(0.2, 1, 0.8, 1);
-      }
-
-      .button--antheright:hover span {
-        transform: translate3d(-10px, 0, 0);
-      }
-
       display: grid;
       grid-template-columns: 0.6fr auto 0.6fr;
       grid-template-rows: auto;
       grid-template-areas: "bright1 butright bright2";
       grid-area: buttonright;
+      .butright{
+        .button {
+          pointer-events: auto;
+          cursor: pointer;
+          background: #e7e7e7;
+          border: none;
+          padding: 1.5rem 3rem; // BUG
+          margin: 0;
+          font-family: inherit;
+          font-size: inherit;
+          position: relative;
+          display: inline-block;
+          color: #fff;
+          width: 100%; //?
+        }
+
+        .button::before,
+        .button::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .button--antheright {
+          font-family: bely-display, sans-serif;
+          color: #fff;
+          background: none;
+        }
+
+        .button--antheright::before {
+          content: "";
+          background: #000;
+          -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+          transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1),
+            -webkit-clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+
+        .button--antheright:hover::before {
+          background: #fff;
+          -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        }
+
+        .button--antheright span {
+          display: block;
+          mix-blend-mode: difference;
+          transition: transform 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+
+        .button--antheright:hover span {
+          transform: translate3d(-10px, 0, 0);
+        }
+      }
     }
 
     .imagesvg {
