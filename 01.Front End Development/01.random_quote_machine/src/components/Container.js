@@ -12,6 +12,7 @@ class Container extends React.Component {
   clickHandler = this.clickHandler.bind(this);
   sharingFacebook = this.sharingFacebook.bind(this);
   sharingTelegram = this.sharingTelegram.bind(this);
+  sharingTwitter = this.sharingTwitter.bind(this);
 
   clickHandler() {
     // Random colors
@@ -57,6 +58,19 @@ class Container extends React.Component {
     tgButton.addEventListener('click', function() {
       window.open(
         'https://t.me/share/url?url=' + url
+      );
+      return false;
+    });
+  }
+
+  sharingTwitter(){
+    var twButton = document.getElementById('tw-share-button');
+    var url = window.location.href;
+
+    twButton.addEventListener('click', function() {
+      window.open(
+        'http://twitter.com/share?text=Random Quote Machine&url='
+         + url + "&hashtags=react,javascript"
       );
       return false;
     });
@@ -163,13 +177,15 @@ class Container extends React.Component {
 
               <div className="buttondivision">
                 <div className="bc3"></div>
-                <ButtonShare className="bmessage">
+                <ButtonShare 
+                className="bmessage"
+                sharingTwitter = {this.sharingTwitter}
+                id="tw-share-button">
                   <div className="button button--share">
                     <span>
                       <a 
                       id="tweet-quote" 
-                      href="https://twitter.com/intent/tweet"
-                      data-url="https://01-random-quote-machine.vercel.app">
+                      href="https://twitter.com/intent/tweet">
                       <div className="bmessage">
                         <div className="b-icon">
                           <i className="twitter icon"></i>

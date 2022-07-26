@@ -6,7 +6,8 @@ return (
           className={props.className} 
           onClick={
             props.sharingFacebook || 
-            props.sharingTelegram}
+            props.sharingTelegram ||
+            props.sharingTwitter }
           id={props.id}>
           {props.children}
         </div>
