@@ -55,6 +55,7 @@ class Container extends React.Component {
     var tgButton = document.getElementById('tg-share-button');
     var url = window.location.href;
     
+    
     tgButton.addEventListener('click', function() {
       window.open(
         'https://t.me/share/url?url=' + url
@@ -66,7 +67,8 @@ class Container extends React.Component {
   sharingTwitter(){
     var twButton = document.getElementById('tw-share-button');
     var url = window.location.href;
-
+    document.getElementById("tweet-quote").removeAttribute("href");
+    
     twButton.addEventListener('click', function() {
       window.open(
         'http://twitter.com/share?text=Random Quote Machine&url='
