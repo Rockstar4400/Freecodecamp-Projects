@@ -8,9 +8,6 @@ import Author from "./Author";
 import Logo from "./Logo";
 import ContainerNoData from "./ContainerNoData";
 
-
-var text = '';
-
 class Container extends React.Component {
   clickHandler = this.clickHandler.bind(this);
   sharingFacebook = this.sharingFacebook.bind(this);
@@ -55,13 +52,11 @@ class Container extends React.Component {
 
   sharingTelegram(){
     var tgButton = document.getElementById('tg-share-button');
-    var tgQuote = document.getElementById('text').value;
     var url = window.location.href;
     
     tgButton.addEventListener('click', function() {
       window.open(
-        'https://t.me/share/url?url=' + url + 
-          `&text ${"&quot;" + text + "&quot;"}`
+        'https://t.me/share/url?url=' + url
       );
       return false;
     });
@@ -87,7 +82,6 @@ class Container extends React.Component {
       ));
       const max = this.props.quotes.length - 1;
       const random = Math.floor(Math.random() * (max - 0 + 1)) + 0;
-      text = listItems[random].key;
       return (
         <div className="container">
           <div className="column1"></div>
@@ -172,7 +166,10 @@ class Container extends React.Component {
                 <ButtonShare className="bmessage">
                   <div className="button button--share">
                     <span>
-                      <a id="tweet-quote" href="https://twitter.com/intent/tweet">
+                      <a 
+                      id="tweet-quote" 
+                      href="https://twitter.com/intent/tweet"
+                      data-url="https://01-random-quote-machine.vercel.app">
                       <div className="bmessage">
                         <div className="b-icon">
                           <i className="twitter icon"></i>
@@ -193,7 +190,8 @@ class Container extends React.Component {
                 <ButtonShare className="bmessage">
                   <div className="button button--share">
                     <span>
-                    <a href="https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine">
+                    <a id="github-quote"
+                      href="https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine">
                       <div className="bmessage">
                         <div className="b-icon">
                           <i className="github square icon"></i>
