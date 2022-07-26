@@ -8,9 +8,13 @@ import Author from "./Author";
 import Logo from "./Logo";
 import ContainerNoData from "./ContainerNoData";
 
+
+var text = '';
+
 class Container extends React.Component {
   clickHandler = this.clickHandler.bind(this);
   sharingFacebook = this.sharingFacebook.bind(this);
+  sharingTelegram = this.sharingTelegram.bind(this);
 
   clickHandler() {
     // Random colors
@@ -41,9 +45,23 @@ class Container extends React.Component {
     
     fbButton.addEventListener('click', function() {
       window.open(
-        'https://www.facebook.com/sharer/sharer.php?p[summary]=Prueba&u=' + url,
+        'https://www.facebook.com/sharer/sharer.php?u=' + url,
           'facebook-share-dialog',
           'width=800,height=600'
+      );
+      return false;
+    });
+  }
+
+  sharingTelegram(){
+    var tgButton = document.getElementById('tg-share-button');
+    var tgQuote = document.getElementById('text').value;
+    var url = window.location.href;
+    
+    tgButton.addEventListener('click', function() {
+      window.open(
+        'https://t.me/share/url?url=' + url + 
+          `&text ${"&quot;" + text + "&quot;"}`
       );
       return false;
     });
@@ -69,7 +87,7 @@ class Container extends React.Component {
       ));
       const max = this.props.quotes.length - 1;
       const random = Math.floor(Math.random() * (max - 0 + 1)) + 0;
-
+      text = listItems[random].key;
       return (
         <div className="container">
           <div className="column1"></div>
@@ -106,7 +124,10 @@ class Container extends React.Component {
             
               <div className="buttondivision">
                 <div className="bc3"></div>
-                <ButtonShare className="bmessage">
+                <ButtonShare 
+                className="bmessage"
+                sharingTelegram={this.sharingTelegram}
+                id="tg-share-button">
                   <div className="button button--share">
                     <span>
                       <div className="bmessage">

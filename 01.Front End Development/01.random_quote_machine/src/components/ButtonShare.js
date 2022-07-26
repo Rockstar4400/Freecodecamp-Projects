@@ -4,7 +4,9 @@ const ButtonShare = (props) => {
 return (
         <div 
           className={props.className} 
-          onClick={props.sharingFacebook}
+          onClick={
+            props.sharingFacebook || 
+            props.sharingTelegram}
           id={props.id}>
           {props.children}
         </div>
