@@ -6,6 +6,7 @@ import ButtonShare from "./ButtonShare";
 import Message from "./Message";
 import Author from "./Author";
 import Logo from "./Logo";
+import ContainerNoData from "./ContainerNoData";
 
 class Container extends React.Component {
   clickHandler = this.clickHandler.bind(this);
@@ -38,51 +39,7 @@ class Container extends React.Component {
 
     if (quotes == null) {
       return (
-        <div className="container">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div>
-            <Card id="quote-box">
-              <div>
-                <div className="message">
-                  <i className="quote left icon"></i>
-                  <Message id="text" message={"No quote"} />
-                  <i className="quote right icon"></i>
-                </div>
-                <div className="author">
-                  <Author id="author" author={"No Author"} />
-                </div>
-              </div>
-            </Card>
-          </div>
-          <div></div>
-          <div className="button">
-            <Button passclass="button_left" clickHandler={this.clickHandler}>
-              <i className="fast backward icon"></i>
-            </Button>
-          </div>
-          <div></div>
-          <div className="button">
-            <Button
-              passclass="button_right"
-              quotes={this.props.quotes}
-              clickHandler={this.clickHandler}
-            >
-              <i className="fast forward icon"></i>
-            </Button>
-          </div>
-          <div></div>
-          <div>
-            <Card passclass="card_image">
-              <div></div>
-              <Image passclass="image" />
-              <div></div>
-            </Card>
-          </div>
-          <div></div>
-        </div>
+        <ContainerNoData />
       );
     } else {
       const listItems = quotes.map((quote) => (
@@ -101,7 +58,7 @@ class Container extends React.Component {
       return (
         <div className="container">
           <div className="column1"></div>
-          <Card className="boxquoute">
+          <Card className="boxquoute" id="quote-box">
             <div className="message">
               <i className="quote left icon"></i>
               <Message id="text" message={listItems[random].key} />
@@ -175,6 +132,7 @@ class Container extends React.Component {
                 <ButtonShare className="bmessage">
                   <div className="button button--share">
                     <span>
+                      <a id="tweet-quote" href="https://twitter.com/intent/tweet">
                       <div className="bmessage">
                         <div className="b-icon">
                           <i className="twitter icon"></i>
@@ -183,6 +141,7 @@ class Container extends React.Component {
                           <p>Twitter</p>
                         </div>
                       </div>
+                      </a>
                     </span>
                   </div>
                 </ButtonShare>
