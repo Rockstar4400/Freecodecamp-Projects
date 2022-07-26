@@ -10,6 +10,7 @@ import ContainerNoData from "./ContainerNoData";
 
 class Container extends React.Component {
   clickHandler = this.clickHandler.bind(this);
+  sharingFacebook = this.sharingFacebook.bind(this);
 
   clickHandler() {
     // Random colors
@@ -32,6 +33,19 @@ class Container extends React.Component {
         house: "",
       });
     }
+  }
+
+  sharingFacebook(){
+    var fbButton = document.getElementById('fb-share-button');
+    var url = window.location.href;
+    
+    fbButton.addEventListener('click', function() {
+      window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+          'facebook-share-dialog',
+          'width=800,height=600'
+      );
+      return false;
+    });
   }
 
   render() {
@@ -108,10 +122,14 @@ class Container extends React.Component {
                 <div className="bc4"></div>
               </div>
 
-              <div className="buttondivision">
+              <div className="buttondivision" >
                 <div className="bc3"></div>
-                <ButtonShare className="bmessage">
-                  <div className="button button--share">
+                <ButtonShare 
+                className="bmessage" 
+                sharingFacebook={this.sharingFacebook}
+                id="fb-share-button"
+                >
+                  <div className="button button--share" >
                     <span>
                       <div className="bmessage">
                         <div className="b-icon">
