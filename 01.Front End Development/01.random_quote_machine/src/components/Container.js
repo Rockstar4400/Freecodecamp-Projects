@@ -43,7 +43,7 @@ class Container extends React.Component {
     
     fbButton.addEventListener('click', function() {
       window.open(
-        'https://www.facebook.com/sharer/sharer.php?u=' + url,
+        'https://www.facebook.com/sharer/sharer.php?u='+ "Prueba " + url,
           'facebook-share-dialog',
           'width=800,height=600'
       );
