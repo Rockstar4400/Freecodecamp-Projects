@@ -7,7 +7,8 @@ return (
           onClick={
             props.sharingFacebook || 
             props.sharingTelegram ||
-            props.sharingTwitter }
+            props.sharingTwitter ||
+            props.copyButton}
           id={props.id}>
           {props.children}
         </div>

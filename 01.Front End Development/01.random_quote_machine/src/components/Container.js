@@ -13,6 +13,7 @@ class Container extends React.Component {
   sharingFacebook = this.sharingFacebook.bind(this);
   sharingTelegram = this.sharingTelegram.bind(this);
   sharingTwitter = this.sharingTwitter.bind(this);
+  copyButton = this.copyButton.bind(this);
 
   clickHandler() {
     // Random colors
@@ -37,54 +38,58 @@ class Container extends React.Component {
     }
   }
 
-  sharingFacebook(){
-    var fbButton = document.getElementById('fb-share-button');
+  sharingFacebook() {
+    var fbButton = document.getElementById("fb-share-button");
     var url = window.location.href;
-    
-    fbButton.addEventListener('click', function() {
+
+    fbButton.addEventListener("click", function () {
       window.open(
-        'https://www.facebook.com/sharer/sharer.php?u=' + url,
-          'facebook-share-dialog',
-          'width=800,height=600'
+        "https://www.facebook.com/sharer/sharer.php?u=" + url,
+        "facebook-share-dialog",
+        "width=800,height=600"
       );
       return false;
     });
   }
 
-  sharingTelegram(){
-    var tgButton = document.getElementById('tg-share-button');
+  sharingTelegram() {
+    var tgButton = document.getElementById("tg-share-button");
     var url = window.location.href;
-    
-    
-    tgButton.addEventListener('click', function() {
-      window.open(
-        'https://t.me/share/url?url=' + url
-      );
+
+    tgButton.addEventListener("click", function () {
+      window.open("https://t.me/share/url?url=" + url);
       return false;
     });
   }
 
-  sharingTwitter(){
-    var twButton = document.getElementById('tw-share-button');
+  sharingTwitter() {
+    var twButton = document.getElementById("tw-share-button");
     var url = window.location.href;
     document.getElementById("tweet-quote").removeAttribute("href");
-    
-    twButton.addEventListener('click', function() {
+
+    twButton.addEventListener("click", function () {
       window.open(
-        'http://twitter.com/share?text=Random Quote Machine&url='
-         + url + "&hashtags=react,javascript"
+        "http://twitter.com/share?text=Random Quote Machine&url=" +
+          url +
+          "&hashtags=react,javascript"
       );
       return false;
     });
+  }
+
+  copyButton() {
+    const btn = document.getElementById('btn-copy');
+    console.log(btn);
+    btn.addEventListener('click', function(){
+      this.classList.toggle('active');
+    })
   }
 
   render() {
     const quotes = this.props.quotes;
 
     if (quotes == null) {
-      return (
-        <ContainerNoData />
-      );
+      return <ContainerNoData />;
     } else {
       const listItems = quotes.map((quote) => (
         <figure
@@ -111,16 +116,45 @@ class Container extends React.Component {
             <div className="author">
               <Author id="author" author={listItems[random].props.author} />
             </div>
-            <div className="buttonsshare">
-             
+            <div className="buttonsshare ">
               <div className="buttondivision">
                 <div className="bc3"></div>
-                <ButtonShare className="bmessage">
+                <ButtonShare
+                  className="bmessage"
+                  copyButton={this.copyButton}
+                >
                   <div className="button button--share">
                     <span>
-                      <div className="bmessage">
-                        <div className="b-icon">
-                          <i className="copy icon"></i>
+                      <div>
+                        <div className="b-icon" id="btn-copy">
+                          <i id="copy-logo">
+                            <svg viewBox="0 0 64 64" fill="white" width="35">
+                              <g>
+                                <path
+                                  d="M51.51,18.001c-0.006-0.085-0.022-0.167-0.05-0.248c-0.012-0.034-0.02-0.067-0.035-0.1
+                                c-0.049-0.106-0.109-0.206-0.194-0.291v-0.001l0,0c0,0-0.001-0.001-0.001-0.002L34.161,0.293c-0.086-0.087-0.188-0.148-0.295-0.197
+                                c-0.027-0.013-0.057-0.02-0.086-0.03c-0.086-0.029-0.174-0.048-0.265-0.053C33.494,0.011,33.475,0,33.453,0H22.177
+                                c-3.678,0-6.669,2.992-6.669,6.67v1.674h-4.663c-3.678,0-6.67,2.992-6.67,6.67V49.03c0,3.678,2.992,6.669,6.67,6.669h22.677
+                                c3.677,0,6.669-2.991,6.669-6.669v-1.675h4.664c3.678,0,6.669-2.991,6.669-6.669V18.069C51.524,18.045,51.512,18.025,51.51,18.001z
+                                M34.454,3.414l13.655,13.655h-8.985c-2.575,0-4.67-2.095-4.67-4.67V3.414z M38.191,49.029c0,2.574-2.095,4.669-4.669,4.669H10.845
+                                c-2.575,0-4.67-2.095-4.67-4.669V15.014c0-2.575,2.095-4.67,4.67-4.67h5.663h4.614v10.399c0,3.678,2.991,6.669,6.668,6.669h10.4
+                                v18.942L38.191,49.029L38.191,49.029z M36.777,25.412h-8.986c-2.574,0-4.668-2.094-4.668-4.669v-8.985L36.777,25.412z
+                                M44.855,45.355h-4.664V26.412c0-0.023-0.012-0.044-0.014-0.067c-0.006-0.085-0.021-0.167-0.049-0.249
+                                c-0.012-0.033-0.021-0.066-0.036-0.1c-0.048-0.105-0.109-0.205-0.194-0.29l0,0l0,0c0-0.001-0.001-0.002-0.001-0.002L22.829,8.637
+                                c-0.087-0.086-0.188-0.147-0.295-0.196c-0.029-0.013-0.058-0.021-0.088-0.031c-0.086-0.03-0.172-0.048-0.263-0.053
+                                c-0.021-0.002-0.04-0.013-0.062-0.013h-4.614V6.67c0-2.575,2.095-4.67,4.669-4.67h10.277v10.4c0,3.678,2.992,6.67,6.67,6.67h10.399
+                                v21.616C49.524,43.26,47.429,45.355,44.855,45.355z"
+                                />
+                              </g>
+                            </svg>
+                          </i>
+                          {/* <i id="done-logo">
+                            <svg viewBox="0 0 32 32" fill="white" width="30" id="done">
+                              <g>
+                                <path d="M12.16,28a3,3,0,0,1-2.35-1.13L3.22,18.62a1,1,0,0,1,1.56-1.24l6.59,8.24A1,1,0,0,0,13,25.56L27.17,4.44a1,1,0,1,1,1.66,1.12L14.67,26.67A3,3,0,0,1,12.29,28Z"/>
+                              </g>
+                            </svg>
+                            </i> */}
                         </div>
                         <div className="b-name">
                           <p>Copy</p>
@@ -131,16 +165,17 @@ class Container extends React.Component {
                 </ButtonShare>
                 <div className="bc4"></div>
               </div>
-            
+
               <div className="buttondivision">
                 <div className="bc3"></div>
-                <ButtonShare 
-                className="bmessage"
-                sharingTelegram={this.sharingTelegram}
-                id="tg-share-button">
+                <ButtonShare
+                  className="bmessage"
+                  sharingTelegram={this.sharingTelegram}
+                  id="tg-share-button"
+                >
                   <div className="button button--share">
                     <span>
-                      <div className="bmessage">
+                      <div>
                         <div className="b-icon">
                           <i className="telegram plane icon"></i>
                         </div>
@@ -154,16 +189,16 @@ class Container extends React.Component {
                 <div className="bc4"></div>
               </div>
 
-              <div className="buttondivision" >
+              <div className="buttondivision">
                 <div className="bc3"></div>
-                <ButtonShare 
-                className="bmessage" 
-                sharingFacebook={this.sharingFacebook}
-                id="fb-share-button"
+                <ButtonShare
+                  className="bmessage"
+                  sharingFacebook={this.sharingFacebook}
+                  id="fb-share-button"
                 >
-                  <div className="button button--share" >
+                  <div className="button button--share">
                     <span>
-                      <div className="bmessage">
+                      <div>
                         <div className="b-icon">
                           <i className="facebook icon"></i>
                         </div>
@@ -179,23 +214,25 @@ class Container extends React.Component {
 
               <div className="buttondivision">
                 <div className="bc3"></div>
-                <ButtonShare 
-                className="bmessage"
-                sharingTwitter = {this.sharingTwitter}
-                id="tw-share-button">
+                <ButtonShare
+                  className="bmessage"
+                  sharingTwitter={this.sharingTwitter}
+                  id="tw-share-button"
+                >
                   <div className="button button--share">
                     <span>
-                      <a 
-                      id="tweet-quote" 
-                      href="https://twitter.com/intent/tweet">
-                      <div className="bmessage">
-                        <div className="b-icon">
-                          <i className="twitter icon"></i>
+                      <a
+                        id="tweet-quote"
+                        href="https://twitter.com/intent/tweet"
+                      >
+                        <div>
+                          <div className="b-icon">
+                            <i className="twitter icon"></i>
+                          </div>
+                          <div className="b-name">
+                            <p>Twitter</p>
+                          </div>
                         </div>
-                        <div className="b-name">
-                          <p>Twitter</p>
-                        </div>
-                      </div>
                       </a>
                     </span>
                   </div>
@@ -208,23 +245,24 @@ class Container extends React.Component {
                 <ButtonShare className="bmessage">
                   <div className="button button--share">
                     <span>
-                    <a id="github-quote"
-                      href="https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine">
-                      <div className="bmessage">
-                        <div className="b-icon">
-                          <i className="github square icon"></i>
+                      <a
+                        id="github-quote"
+                        href="https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine"
+                      >
+                        <div>
+                          <div className="b-icon">
+                            <i className="github square icon"></i>
+                          </div>
+                          <div className="b-name">
+                            <p>Github</p>
+                          </div>
                         </div>
-                        <div className="b-name">
-                          <p>Github</p>
-                        </div>
-                      </div>
                       </a>
                     </span>
                   </div>
                 </ButtonShare>
                 <div className="bc4"></div>
               </div>
-
             </div>
 
             <div id="new-quote"></div>

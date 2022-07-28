@@ -32,50 +32,50 @@ $breakpoints: (
                 display: inline-block;
                 color: #fff;
                 width: 100%;
-              .button::before,
-              .button::after {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              }
+              // .button::before,
+              // .button::after {
+              //   position: absolute;
+              //   top: 0;
+              //   left: 0;
+              //   width: 100%;
+              //   height: 100%;
+              // }
 
-              .button--share {
-                background: none;
-                font-family: "Cinzel";
-                padding: 0.7em 2.5em;
-              }
+              // .button--share {
+              //   background: none;
+              //   font-family: "Cinzel";
+              //   padding: 0.7em 2.5em;
+              // }
 
-              .button--share span {
-                display: inline-block;
-                position: relative;
-                color: #fff;
-              }
+              // .button--share span {
+              //   display: inline-block;
+              //   position: relative;
+              //   color: #fff;
+              // }
 
-              .button--share::before {
-                content: "";
-                background: #000;
-                transition: 
-                transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-              }
+              // .button--share::before {
+              //   content: "";
+              //   background: #000;
+              //   transition: 
+              //   transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+              // }
 
-              .button--share:hover::before {
-                transform: scale3d(0.9, 0.8, 1);
-              }
+              // .button--share:hover::before {
+              //   transform: scale3d(0.9, 0.8, 1);
+              // }
 
-              .button--share::after {
-                content: "";
-                border: 1px solid #fff;
-                transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-                border-radius: 0px;
-                transform: scale3d(0.85, 0.65, 1);
-                z-index: -1;
-              }
+              // .button--share::after {
+              //   content: "";
+              //   border: 1px solid #fff;
+              //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+              //   border-radius: 0px;
+              //   transform: scale3d(0.85, 0.65, 1);
+              //   z-index: -1;
+              // }
 
-              .button--share:hover::after {
-                transform: scale3d(1, 1, 1);
-              }
+              // .button--share:hover::after {
+              //   transform: scale3d(1, 1, 1);
+              // }
             }
           }  
       }
@@ -171,62 +171,62 @@ $breakpoints: (
         "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
          .buttonsshare {
           flex-wrap: wrap !important;
-          .buttondivision {
-            pointer-events: auto;
-            cursor: pointer;
-            border: none;
-            margin: 0;
-            font-family: inherit;
-            font-size: inherit;
-            position: relative;
-            display: inline-block;
-            color: #fff;
-            width: 100%;
-          .button::before,
-          .button::after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          }
+          // .buttondivision {
+          //   pointer-events: auto;
+          //   cursor: pointer;
+          //   border: none;
+          //   margin: 0;
+          //   font-family: inherit;
+          //   font-size: inherit;
+          //   position: relative;
+          //   display: inline-block;
+          //   color: #fff;
+          //   width: 100%;
+          // .button::before,
+          // .button::after {
+          //   position: absolute;
+          //   top: 0;
+          //   left: 0;
+          //   width: 100%;
+          //   height: 100%;
+          // }
 
-          .button--share {
-            background: none;
-            font-family: "Cinzel";
-            padding: 0.7em 2.5em;
-          }
+          // .button--share {
+          //   background: none;
+          //   font-family: "Cinzel";
+          //   padding: 0.7em 2.5em;
+          // }
 
-          .button--share span {
-            display: inline-block;
-            position: relative;
-            color: #fff;
-          }
+          // .button--share span {
+          //   display: inline-block;
+          //   position: relative;
+          //   color: #fff;
+          // }
 
-          .button--share::before {
-            content: "";
-            background: #000;
-            transition: 
-            transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-          }
+          // .button--share::before {
+          //   content: "";
+          //   background: #000;
+          //   transition: 
+          //   transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          // }
 
-          .button--share:hover::before {
-            transform: scale3d(0.9, 0.8, 1);
-          }
+          // .button--share:hover::before {
+          //   transform: scale3d(0.9, 0.8, 1);
+          // }
 
-          .button--share::after {
-            content: "";
-            border: 1px solid #fff;
-            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-            border-radius: 0px;
-            transform: scale3d(0.85, 0.65, 1);
-            z-index: -1;
-          }
+          // .button--share::after {
+          //   content: "";
+          //   border: 1px solid #fff;
+          //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          //   border-radius: 0px;
+          //   transform: scale3d(0.85, 0.65, 1);
+          //   z-index: -1;
+          // }
 
-          .button--share:hover::after {
-            transform: scale3d(1, 1, 1);
-          }
-        }
+          // .button--share:hover::after {
+          //   transform: scale3d(1, 1, 1);
+          // }
+        //}
       }  
       }
 
@@ -303,63 +303,63 @@ $breakpoints: (
         .buttonsshare {
           flex-wrap: wrap !important;
           .buttondivision {
-            .button {
-              pointer-events: auto;
-              cursor: pointer;
-              background: #e7e7e7;
-              border: none;
-              margin: 0;
-              font-family: inherit;
-              font-size: inherit;
-              position: relative;
-              display: inline-block;
-              color: #fff;
-              width: 100%;
-            }
+            // .button {
+            //   pointer-events: auto;
+            //   cursor: pointer;
+            //   background: #e7e7e7;
+            //   border: none;
+            //   margin: 0;
+            //   font-family: inherit;
+            //   font-size: inherit;
+            //   position: relative;
+            //   display: inline-block;
+            //   color: #fff;
+            //   width: 100%;
+            // }
 
-            .button::before,
-            .button::after {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-            }
+            // .button::before,
+            // .button::after {
+            //   position: absolute;
+            //   top: 0;
+            //   left: 0;
+            //   width: 100%;
+            //   height: 100%;
+            // }
 
-            .button--share {
-              background: none;
-              font-family: "Cinzel";
-              padding: 0.7em 2.5em;
-            }
+            // .button--share {
+            //   background: none;
+            //   font-family: "Cinzel";
+            //   padding: 0.7em 2.5em;
+            // }
 
-            .button--share span {
-              display: inline-block;
-              position: relative;
-              color: #fff;
-            }
+            // .button--share span {
+            //   display: inline-block;
+            //   position: relative;
+            //   color: #fff;
+            // }
 
-            .button--share::before {
-              content: "";
-              background: #000;
-              transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-            }
+            // .button--share::before {
+            //   content: "";
+            //   background: #000;
+            //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+            // }
 
-            .button--share:hover::before {
-              transform: scale3d(0.9, 0.8, 1);
-            }
+            // .button--share:hover::before {
+            //   transform: scale3d(0.9, 0.8, 1);
+            // }
 
-            .button--share::after {
-              content: "";
-              border: 1px solid #fff;
-              transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-              border-radius: 0px;
-              transform: scale3d(0.85, 0.65, 1);
-              z-index: -1;
-            }
+            // .button--share::after {
+            //   content: "";
+            //   border: 1px solid #fff;
+            //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+            //   border-radius: 0px;
+            //   transform: scale3d(0.85, 0.65, 1);
+            //   z-index: -1;
+            // }
 
-            .button--share:hover::after {
-              transform: scale3d(1, 1, 1);
-            }
+            // .button--share:hover::after {
+            //   transform: scale3d(1, 1, 1);
+            // }
             
           }
         }
@@ -479,63 +479,63 @@ $breakpoints: (
       .buttonsshare {
         flex-wrap: wrap !important;
         .buttondivision {
-          .button {
-            pointer-events: auto;
-            cursor: pointer;
-            background: #e7e7e7;
-            border: none;
-            margin: 0;
-            font-family: inherit;
-            font-size: inherit;
-            position: relative;
-            display: inline-block;
-            color: #fff;
-            width: 100%;
-          }
+          // .button {
+          //   pointer-events: auto;
+          //   cursor: pointer;
+          //   background: #e7e7e7;
+          //   border: none;
+          //   margin: 0;
+          //   font-family: inherit;
+          //   font-size: inherit;
+          //   position: relative;
+          //   display: inline-block;
+          //   color: #fff;
+          //   width: 100%;
+          // }
 
-          .button::before,
-          .button::after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          }
+          // .button::before,
+          // .button::after {
+          //   position: absolute;
+          //   top: 0;
+          //   left: 0;
+          //   width: 100%;
+          //   height: 100%;
+          // }
 
-          .button--share {
-            background: none;
-            font-family: "Cinzel";
-            padding: 0.7em 2.5em;
-          }
+          // .button--share {
+          //   background: none;
+          //   font-family: "Cinzel";
+          //   padding: 0.7em 2.5em;
+          // }
 
-          .button--share span {
-            display: inline-block;
-            position: relative;
-            color: #fff;
-          }
+          // .button--share span {
+          //   display: inline-block;
+          //   position: relative;
+          //   color: #fff;
+          // }
 
-          .button--share::before {
-            content: "";
-            background: #000;
-            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-          }
+          // .button--share::before {
+          //   content: "";
+          //   background: #000;
+          //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          // }
 
-          .button--share:hover::before {
-            transform: scale3d(0.9, 0.8, 1);
-          }
+          // .button--share:hover::before {
+          //   transform: scale3d(0.9, 0.8, 1);
+          // }
 
-          .button--share::after {
-            content: "";
-            border: 1px solid #fff;
-            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-            border-radius: 0px;
-            transform: scale3d(0.85, 0.65, 1);
-            z-index: -1;
-          }
+          // .button--share::after {
+          //   content: "";
+          //   border: 1px solid #fff;
+          //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          //   border-radius: 0px;
+          //   transform: scale3d(0.85, 0.65, 1);
+          //   z-index: -1;
+          // }
 
-          .button--share:hover::after {
-            transform: scale3d(1, 1, 1);
-          }
+          // .button--share:hover::after {
+          //   transform: scale3d(1, 1, 1);
+          // }
           
         }
       }
@@ -653,6 +653,7 @@ $breakpoints: (
           .buttondivision {
             .bmessage {
               margin-top: 20px;
+              
               .b-icon {
                 margin-top: 10px;
                 font-size: 300% !important;
@@ -661,7 +662,7 @@ $breakpoints: (
                 font-size: 250% !important;
               }
 
-              .button {
+            .button {
               pointer-events: auto;
               cursor: pointer;
               background: #e7e7e7;
@@ -718,8 +719,6 @@ $breakpoints: (
             .button--share:hover::after {
               transform: scale3d(1, 1, 1);
             }
-        
-
             }
           }
       }
@@ -763,7 +762,6 @@ html {
       "column3 imagesvg column4"
       "column5 logo column6";
     grid-gap: 10px;
-    //grid-template-rows: auto auto auto 300px !important;
     .boxquoute {
       display: grid;
       grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr;
@@ -811,28 +809,48 @@ html {
         column-gap: 20px;
         .buttondivision {
           display: grid;
-          grid-template-columns: 0.25fr 0.25fr auto 0.25fr;
+          grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
           grid-template-rows: auto;
           grid-template-areas: "bc3 bmessage bmessage bc4";
           pointer-events: auto;
           cursor: pointer;
           font-size: 12px;
-
+          
           .bmessage {
+            border : 2px red solid !important;
             display: grid;
-            grid-template-columns: 0.25fr 100%;
+            grid-template-columns: auto;
             grid-template-rows: auto;
             grid-template-areas: "b-icon b-name";
             .b-icon {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              font-size: 200%;
+              border : 2px red solid !important;
+              margin: 3px;
+              // #copy-logo,
+              // #done-logo{
+              //   transition: all .35s ease-in-out;
+              // }
+
+              // #done-logo{
+              //   left: 0;
+              //   position: absolute;
+              // }
+              
+            }
+            .b-name{
+              border : 2px red solid !important;
             }
 
-            .b-name {
-              font-size: 200%;
+            .b-icon.active #copy-logo{
+              transform: rotate( 180deg ) scale( 0 );
+              opacity: 0;
             }
+
+            .b-icon:not( .active ) #done
+            {
+              transform: rotate( -180deg ) scale( 0 );
+              opacity: 0;
+            }
+            
           }
         }
       }
@@ -1074,18 +1092,5 @@ html {
         }
       }
     }
-
-    // .logo{
-    //   margin-top: -20px;
-    //   h4{
-    //     text-align: center;
-    //   }
-    //   .react{
-    //       width: 20%;
-    //       height: 20%;
-    //       display: block;
-    //       margin: auto;
-    //   }
-    // }
   }
 }
