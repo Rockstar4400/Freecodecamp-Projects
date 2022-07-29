@@ -41,8 +41,7 @@ class Container extends React.Component {
     fbButton.addEventListener("click", function () {
       window.open(
         "https://www.facebook.com/sharer/sharer.php?u=" + url,
-        "facebook-share-dialog",
-        "width=800,height=600"
+        "_self"
       );
       return false;
     });
@@ -54,7 +53,7 @@ class Container extends React.Component {
     tgButton.addEventListener("click", function () {
       const quoute = document.getElementById("text").innerHTML;
       const author = document.getElementById("author").innerHTML;
-      window.open("https://t.me/share/url?url=" + quoute + author);
+      window.open("https://t.me/share/url?url=" + quoute + author,"_self");
       return false;
     });
   }
@@ -70,7 +69,7 @@ class Container extends React.Component {
         "http://twitter.com/share?text=" +
           quoute +
           author +
-          "&hashtags=GameOfThrones"
+          "&hashtags=GameOfThrones","_self"
       );
       return false;
     });
@@ -99,7 +98,8 @@ class Container extends React.Component {
     var ghButton = document.getElementById("gh-share-button");
     ghButton.addEventListener("click", function () {
       window.open(
-        "https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine"
+        "https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine",
+        "_self"
       );
       return false;
     });
