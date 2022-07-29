@@ -80,7 +80,9 @@ class Container extends React.Component {
     const quoute = document.getElementById('text').innerHTML;
     const author =document.getElementById('author').innerHTML;
 
-    navigator.clipboard.writeText(quoute+author).then(function() {
+    navigator.clipboard.writeText(quoute+author)
+    .then(function() {
+      alert('Copied successfully!');
     }, function(err) {
       console.error(err);
     });
