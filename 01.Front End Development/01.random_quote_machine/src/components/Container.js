@@ -52,8 +52,7 @@ class Container extends React.Component {
       window.FB.ui({
         display: 'popup',
         method: 'share',
-        href: url,
-        properties: {message:'Prueba'}
+        href: url
       }, function(response){});
     }
   }
