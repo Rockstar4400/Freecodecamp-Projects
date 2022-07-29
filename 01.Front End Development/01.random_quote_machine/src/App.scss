@@ -19,65 +19,81 @@ $breakpoints: (
           "message message message message message"
           "author author author author author"
           "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
-          .buttonsshare {
-            flex-wrap: wrap !important;
-            .buttondivision {
-                pointer-events: auto;
-                cursor: pointer;
-                border: none;
-                margin: 0;
-                font-family: inherit;
-                font-size: inherit;
-                position: relative;
-                display: inline-block;
-                color: #fff;
-                width: 100%;
-              // .button::before,
-              // .button::after {
-              //   position: absolute;
-              //   top: 0;
-              //   left: 0;
-              //   width: 100%;
-              //   height: 100%;
-              // }
-
-              // .button--share {
-              //   background: none;
-              //   font-family: "Cinzel";
-              //   padding: 0.7em 2.5em;
-              // }
-
-              // .button--share span {
-              //   display: inline-block;
-              //   position: relative;
-              //   color: #fff;
-              // }
-
-              // .button--share::before {
-              //   content: "";
-              //   background: #000;
-              //   transition: 
-              //   transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-              // }
-
-              // .button--share:hover::before {
-              //   transform: scale3d(0.9, 0.8, 1);
-              // }
-
-              // .button--share::after {
-              //   content: "";
-              //   border: 1px solid #fff;
-              //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-              //   border-radius: 0px;
-              //   transform: scale3d(0.85, 0.65, 1);
-              //   z-index: -1;
-              // }
-
-              // .button--share:hover::after {
-              //   transform: scale3d(1, 1, 1);
-              // }
+        .buttonsshare {
+          flex-wrap: wrap !important;
+          .buttondivision {
+            pointer-events: auto;
+            cursor: pointer;
+            background: #e7e7e7;
+            border: none;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            width: 100%;
+            .buttonEffect {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+              .bmessage {
+                margin-top: 20px;
+  
+                .b-icon {
+                  margin-top: 10px;
+                  font-size: 300% !important;
+                }
+                .b-name {
+                  font-size: 250% !important;
+                }
+              }
             }
-          }  
+          }
+          .buttondivision::before,
+          .buttondivision::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+          }
+  
+          .buttondivision--share {
+            background: none;
+            font-family: "Cinzel";
+            padding: 0.7em 2.5em;
+          }
+  
+          .buttondivision--share div {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+          }
+  
+          .buttondivision--share::before {
+            content: "";
+            background: #000;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          }
+  
+          .buttondivision--share:hover::before {
+            transform: scale3d(0.9, 0.8, 1);
+          }
+  
+          .buttondivision--share::after {
+            content: "";
+            border: 1px solid #fff;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+            border-radius: 0px;
+            transform: scale3d(0.85, 0.65, 1);
+            z-index: -1;
+          }
+  
+          .buttondivision--share:hover::after {
+            transform: scale3d(1, 1, 1);
+          }
+        }
       }
 
       .butttonleft {
@@ -109,27 +125,27 @@ $breakpoints: (
           }
 
           .Martell {
-            width: 87%  !important;
-            height: 87%  !important;
+            width: 87% !important;
+            height: 87% !important;
           }
 
           .Stark {
-            width: 100%  !important;
-            height: 100%  !important;
+            width: 100% !important;
+            height: 100% !important;
           }
 
           .Lannister {
-            width: 100%  !important;
-            height: 100%  !important;
+            width: 100% !important;
+            height: 100% !important;
           }
 
           .Greyjoy {
-            width: 100%  !important;
-            height: 100%  !important;
+            width: 100% !important;
+            height: 100% !important;
           }
 
           .Baratheon {
-            width: 100%  !important;
+            width: 100% !important;
             height: 100% !important;
           }
 
@@ -139,95 +155,112 @@ $breakpoints: (
           }
 
           .Targaryen {
-            width: 100%  !important;
-            height: 100%  !important;
+            width: 100% !important;
+            height: 100% !important;
           }
         }
       }
-      .logo{
+      .logo {
         margin-top: 60px;
-        h4{
+        h4 {
           text-align: center;
         }
-        .react{
-            width: 100%;
-            height: 100%;
-            display: block;
-            margin: auto;
+        .react {
+          width: 100%;
+          height: 100%;
+          display: block;
+          margin: auto;
         }
       }
     }
   }
 }
 
-@include media(">tablet", "<1030px"){
+@include media(">tablet", "<1030px") {
   html {
     .container {
       grid-template-rows: auto auto auto 100px !important;
       .boxquoute {
         grid-template-areas:
-        "message message message message message"
-        "main main author author author"
-        "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
-         .buttonsshare {
+          "message message message message message"
+          "main main author author author"
+          "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
+        .buttonsshare {
           flex-wrap: wrap !important;
-          // .buttondivision {
-          //   pointer-events: auto;
-          //   cursor: pointer;
-          //   border: none;
-          //   margin: 0;
-          //   font-family: inherit;
-          //   font-size: inherit;
-          //   position: relative;
-          //   display: inline-block;
-          //   color: #fff;
-          //   width: 100%;
-          // .button::before,
-          // .button::after {
-          //   position: absolute;
-          //   top: 0;
-          //   left: 0;
-          //   width: 100%;
-          //   height: 100%;
-          // }
+          .buttondivision {
+            pointer-events: auto;
+            cursor: pointer;
+            background: #e7e7e7;
+            border: none;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            width: 100%;
+            .buttonEffect {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+              .bmessage {
+                margin-top: 20px;
+  
+                .b-icon {
+                  margin-top: 10px;
+                  font-size: 300% !important;
+                }
+                .b-name {
+                  font-size: 250% !important;
+                }
+              }
+            }
+          }
+          .buttondivision::before,
+          .buttondivision::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+          }
+  
+          .buttondivision--share {
+            background: none;
+            font-family: "Cinzel";
+            padding: 0.7em 2.5em;
+          }
+  
+          .buttondivision--share div {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+          }
+  
+          .buttondivision--share::before {
+            content: "";
+            background: #000;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          }
+  
+          .buttondivision--share:hover::before {
+            transform: scale3d(0.9, 0.8, 1);
+          }
+  
+          .buttondivision--share::after {
+            content: "";
+            border: 1px solid #fff;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+            border-radius: 0px;
+            transform: scale3d(0.85, 0.65, 1);
+            z-index: -1;
+          }
+  
+          .buttondivision--share:hover::after {
+            transform: scale3d(1, 1, 1);
+          }
 
-          // .button--share {
-          //   background: none;
-          //   font-family: "Cinzel";
-          //   padding: 0.7em 2.5em;
-          // }
-
-          // .button--share span {
-          //   display: inline-block;
-          //   position: relative;
-          //   color: #fff;
-          // }
-
-          // .button--share::before {
-          //   content: "";
-          //   background: #000;
-          //   transition: 
-          //   transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-          // }
-
-          // .button--share:hover::before {
-          //   transform: scale3d(0.9, 0.8, 1);
-          // }
-
-          // .button--share::after {
-          //   content: "";
-          //   border: 1px solid #fff;
-          //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-          //   border-radius: 0px;
-          //   transform: scale3d(0.85, 0.65, 1);
-          //   z-index: -1;
-          // }
-
-          // .button--share:hover::after {
-          //   transform: scale3d(1, 1, 1);
-          // }
-        //}
-      }  
+        }
       }
 
       .imagesvg {
@@ -243,27 +276,27 @@ $breakpoints: (
           }
 
           .Martell {
-            width: 87%  !important;
-            height: 87%  !important;
+            width: 87% !important;
+            height: 87% !important;
           }
 
           .Stark {
-            width: 100%  !important;
-            height: 100%  !important;
+            width: 100% !important;
+            height: 100% !important;
           }
 
           .Lannister {
-            width: 100%  !important;
-            height: 100%  !important;
+            width: 100% !important;
+            height: 100% !important;
           }
 
           .Greyjoy {
-            width: 100%  !important;
-            height: 100%  !important;
+            width: 100% !important;
+            height: 100% !important;
           }
 
           .Baratheon {
-            width: 100%  !important;
+            width: 100% !important;
             height: 100% !important;
           }
 
@@ -273,29 +306,29 @@ $breakpoints: (
           }
 
           .Targaryen {
-            width: 100%  !important;
-            height: 100%  !important;
+            width: 100% !important;
+            height: 100% !important;
           }
         }
       }
 
-      .logo{
+      .logo {
         margin-top: 70px;
-        h4{
+        h4 {
           text-align: center;
         }
-        .react{
-            width: 100%;
-            height: 100%;
-            display: block;
-            margin: auto;
+        .react {
+          width: 100%;
+          height: 100%;
+          display: block;
+          margin: auto;
         }
       }
     }
   }
 }
 
-@include media(">desktop", "<1400px" ){
+@include media(">desktop", "<1400px") {
   html {
     .container {
       grid-template-rows: auto auto auto 200px !important;
@@ -303,64 +336,76 @@ $breakpoints: (
         .buttonsshare {
           flex-wrap: wrap !important;
           .buttondivision {
-            // .button {
-            //   pointer-events: auto;
-            //   cursor: pointer;
-            //   background: #e7e7e7;
-            //   border: none;
-            //   margin: 0;
-            //   font-family: inherit;
-            //   font-size: inherit;
-            //   position: relative;
-            //   display: inline-block;
-            //   color: #fff;
-            //   width: 100%;
-            // }
-
-            // .button::before,
-            // .button::after {
-            //   position: absolute;
-            //   top: 0;
-            //   left: 0;
-            //   width: 100%;
-            //   height: 100%;
-            // }
-
-            // .button--share {
-            //   background: none;
-            //   font-family: "Cinzel";
-            //   padding: 0.7em 2.5em;
-            // }
-
-            // .button--share span {
-            //   display: inline-block;
-            //   position: relative;
-            //   color: #fff;
-            // }
-
-            // .button--share::before {
-            //   content: "";
-            //   background: #000;
-            //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-            // }
-
-            // .button--share:hover::before {
-            //   transform: scale3d(0.9, 0.8, 1);
-            // }
-
-            // .button--share::after {
-            //   content: "";
-            //   border: 1px solid #fff;
-            //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-            //   border-radius: 0px;
-            //   transform: scale3d(0.85, 0.65, 1);
-            //   z-index: -1;
-            // }
-
-            // .button--share:hover::after {
-            //   transform: scale3d(1, 1, 1);
-            // }
-            
+            pointer-events: auto;
+            cursor: pointer;
+            background: #e7e7e7;
+            border: none;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            width: 100%;
+            .buttonEffect {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+              .bmessage {
+                margin-top: 20px;
+  
+                .b-icon {
+                  margin-top: 10px;
+                  font-size: 300% !important;
+                }
+                .b-name {
+                  font-size: 250% !important;
+                }
+              }
+            }
+          }
+          .buttondivision::before,
+          .buttondivision::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+          }
+  
+          .buttondivision--share {
+            background: none;
+            font-family: "Cinzel";
+            padding: 0.7em 2.5em;
+          }
+  
+          .buttondivision--share div {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+          }
+  
+          .buttondivision--share::before {
+            content: "";
+            background: #000;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          }
+  
+          .buttondivision--share:hover::before {
+            transform: scale3d(0.9, 0.8, 1);
+          }
+  
+          .buttondivision--share::after {
+            content: "";
+            border: 1px solid #fff;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+            border-radius: 0px;
+            transform: scale3d(0.85, 0.65, 1);
+            z-index: -1;
+          }
+  
+          .buttondivision--share:hover::after {
+            transform: scale3d(1, 1, 1);
           }
         }
       }
@@ -382,7 +427,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Tyrell {
             width: 78%;
             height: 78%;
@@ -390,7 +435,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Martell {
             width: 70%;
             height: 70%;
@@ -398,7 +443,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Stark {
             width: 84%;
             height: 84%;
@@ -406,7 +451,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Lannister {
             width: 72%;
             height: 72%;
@@ -414,7 +459,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Greyjoy {
             width: 83%;
             height: 83%;
@@ -422,7 +467,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Baratheon {
             width: 70%;
             height: 70%;
@@ -430,7 +475,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Arryn {
             width: 78%;
             height: 78%;
@@ -438,7 +483,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Targaryen {
             width: 83%;
             height: 83%;
@@ -449,23 +494,23 @@ $breakpoints: (
         }
       }
 
-      .logo{
+      .logo {
         margin-top: 120px;
-        h4{
+        h4 {
           text-align: center;
         }
-        .react{
-            width: 100%;
-            height: 100%;
-            display: block;
-            margin: auto;
+        .react {
+          width: 100%;
+          height: 100%;
+          display: block;
+          margin: auto;
         }
       }
     }
   }
 }
 
-@include media(">desktop", "<1750px" ){
+@include media(">desktop", "<1750px") {
   html {
     .container {
       grid-template-rows: auto auto auto 50px !important;
@@ -474,69 +519,80 @@ $breakpoints: (
           "message message message message message"
           "main main main author author"
           "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
-          
       }
       .buttonsshare {
         flex-wrap: wrap !important;
         .buttondivision {
-          // .button {
-          //   pointer-events: auto;
-          //   cursor: pointer;
-          //   background: #e7e7e7;
-          //   border: none;
-          //   margin: 0;
-          //   font-family: inherit;
-          //   font-size: inherit;
-          //   position: relative;
-          //   display: inline-block;
-          //   color: #fff;
-          //   width: 100%;
-          // }
+          pointer-events: auto;
+          cursor: pointer;
+          background: #e7e7e7;
+          border: none;
+          margin: 0;
+          font-family: inherit;
+          font-size: inherit;
+          position: relative;
+          display: inline-block;
+          color: #fff;
+          width: 100%;
+          .buttonEffect {
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+            .bmessage {
+              margin-top: 20px;
 
-          // .button::before,
-          // .button::after {
-          //   position: absolute;
-          //   top: 0;
-          //   left: 0;
-          //   width: 100%;
-          //   height: 100%;
-          // }
+              .b-icon {
+                margin-top: 10px;
+                font-size: 300% !important;
+              }
+              .b-name {
+                font-size: 250% !important;
+              }
+            }
+          }
+        }
+        .buttondivision::before,
+        .buttondivision::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100% !important;
+          height: 100% !important;
+        }
 
-          // .button--share {
-          //   background: none;
-          //   font-family: "Cinzel";
-          //   padding: 0.7em 2.5em;
-          // }
+        .buttondivision--share {
+          background: none;
+          font-family: "Cinzel";
+          padding: 0.7em 2.5em;
+        }
 
-          // .button--share span {
-          //   display: inline-block;
-          //   position: relative;
-          //   color: #fff;
-          // }
+        .buttondivision--share div {
+          display: inline-block;
+          position: relative;
+          color: #fff;
+        }
 
-          // .button--share::before {
-          //   content: "";
-          //   background: #000;
-          //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-          // }
+        .buttondivision--share::before {
+          content: "";
+          background: #000;
+          transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+        }
 
-          // .button--share:hover::before {
-          //   transform: scale3d(0.9, 0.8, 1);
-          // }
+        .buttondivision--share:hover::before {
+          transform: scale3d(0.9, 0.8, 1);
+        }
 
-          // .button--share::after {
-          //   content: "";
-          //   border: 1px solid #fff;
-          //   transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-          //   border-radius: 0px;
-          //   transform: scale3d(0.85, 0.65, 1);
-          //   z-index: -1;
-          // }
+        .buttondivision--share::after {
+          content: "";
+          border: 1px solid #fff;
+          transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          border-radius: 0px;
+          transform: scale3d(0.85, 0.65, 1);
+          z-index: -1;
+        }
 
-          // .button--share:hover::after {
-          //   transform: scale3d(1, 1, 1);
-          // }
-          
+        .buttondivision--share:hover::after {
+          transform: scale3d(1, 1, 1);
         }
       }
 
@@ -557,7 +613,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Tyrell {
             width: 78%;
             height: 78%;
@@ -565,7 +621,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Martell {
             width: 70%;
             height: 70%;
@@ -573,7 +629,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Stark {
             width: 84%;
             height: 84%;
@@ -581,7 +637,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Lannister {
             width: 72%;
             height: 72%;
@@ -589,7 +645,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Greyjoy {
             width: 83%;
             height: 83%;
@@ -597,7 +653,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Baratheon {
             width: 70%;
             height: 70%;
@@ -605,7 +661,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Arryn {
             width: 78%;
             height: 78%;
@@ -613,7 +669,7 @@ $breakpoints: (
             margin: auto;
             background-color: $svg-bg-color;
           }
-  
+
           .Targaryen {
             width: 83%;
             height: 83%;
@@ -624,23 +680,23 @@ $breakpoints: (
         }
       }
 
-      .logo{
+      .logo {
         margin-top: -20px;
-        h4{
+        h4 {
           text-align: center;
         }
-        .react{
-            width: 100%;
-            height: 100%;
-            display: block;
-            margin: auto;
+        .react {
+          width: 100%;
+          height: 100%;
+          display: block;
+          margin: auto;
         }
       }
     }
   }
 }
 
-@include media(">1750px"){
+@include media(">1750px") {
   html {
     .container {
       grid-template-rows: auto auto auto 100px !important;
@@ -649,11 +705,26 @@ $breakpoints: (
           "message message message message message"
           "main main main author author"
           "buttonsshare buttonsshare buttonsshare buttonsshare buttonsshare" !important;
-          
-          .buttondivision {
+
+        .buttondivision {
+          pointer-events: auto;
+          cursor: pointer;
+          background: #e7e7e7;
+          border: none;
+          margin: 0;
+          font-family: inherit;
+          font-size: inherit;
+          position: relative;
+          display: inline-block;
+          color: #fff;
+          width: 100%;
+          .buttonEffect {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
             .bmessage {
               margin-top: 20px;
-              
+
               .b-icon {
                 margin-top: 10px;
                 font-size: 300% !important;
@@ -661,77 +732,63 @@ $breakpoints: (
               .b-name {
                 font-size: 250% !important;
               }
-
-            .button {
-              pointer-events: auto;
-              cursor: pointer;
-              background: #e7e7e7;
-              border: none;
-              margin: 0;
-              font-family: inherit;
-              font-size: inherit;
-              position: relative;
-              display: inline-block;
-              color: #fff;
-              width: 100%;
-            }
-
-            .button::before,
-            .button::after {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 110% !important;
-              height: 110% !important;
-            }
-
-            .button--share {
-              background: none;
-              font-family: "Cinzel";
-              padding: 0.7em 2.5em;
-            }
-
-            .button--share span {
-              display: inline-block;
-              position: relative;
-              color: #fff;
-            }
-
-            .button--share::before {
-              content: "";
-              background: #000;
-              transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-            }
-
-            .button--share:hover::before {
-              transform: scale3d(0.9, 0.8, 1);
-            }
-
-            .button--share::after {
-              content: "";
-              border: 1px solid #fff;
-              transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
-              border-radius: 0px;
-              transform: scale3d(0.85, 0.65, 1);
-              z-index: -1;
-            }
-
-            .button--share:hover::after {
-              transform: scale3d(1, 1, 1);
-            }
             }
           }
+        }
+        .buttondivision::before,
+        .buttondivision::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100% !important;
+          height: 100% !important;
+        }
+
+        .buttondivision--share {
+          background: none;
+          font-family: "Cinzel";
+          padding: 0.7em 2.5em;
+        }
+
+        .buttondivision--share div {
+          display: inline-block;
+          position: relative;
+          color: #fff;
+        }
+
+        .buttondivision--share::before {
+          content: "";
+          background: #000;
+          transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+        }
+
+        .buttondivision--share:hover::before {
+          transform: scale3d(0.9, 0.8, 1);
+        }
+
+        .buttondivision--share::after {
+          content: "";
+          border: 1px solid #fff;
+          transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+          border-radius: 0px;
+          transform: scale3d(0.85, 0.65, 1);
+          z-index: -1;
+        }
+
+        .buttondivision--share:hover::after {
+          transform: scale3d(1, 1, 1);
+        }
       }
-      .logo{
+      .logo {
         margin-top: -20px;
-        h4{
+        h4 {
           text-align: center;
         }
-        .react{
-            width: 50%;
-            height: 50%;
-            display: block;
-            margin: auto;
+        .react {
+          width: 50%;
+          height: 50%;
+          display: block;
+          margin: auto;
         }
       }
     }
@@ -744,12 +801,11 @@ html {
   padding: 0;
   height: auto;
 
-  #tweet-quote{
+  #tweet-quote {
     color: #fff !important;
   }
 
-  
-  #github-quote{
+  #github-quote {
     color: #fff !important;
   }
 
@@ -808,49 +864,45 @@ html {
         align-items: center;
         column-gap: 20px;
         .buttondivision {
-          display: grid;
-          grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
-          grid-template-rows: auto;
-          grid-template-areas: "bc3 bmessage bmessage bc4";
-          pointer-events: auto;
-          cursor: pointer;
-          font-size: 12px;
-          
-          .bmessage {
-            border : 2px red solid !important;
+          .buttonEffect {
             display: grid;
-            grid-template-columns: auto;
+            grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
             grid-template-rows: auto;
-            grid-template-areas: "b-icon b-name";
-            .b-icon {
-              border : 2px red solid !important;
-              margin: 3px;
-              // #copy-logo,
-              // #done-logo{
-              //   transition: all .35s ease-in-out;
-              // }
+            grid-template-areas: "bc3 bmessage bmessage bc4";
+            pointer-events: auto;
+            cursor: pointer;
+            font-size: 12px;
+            .bmessage {
+              display: grid;
+              grid-template-columns: auto;
+              grid-template-rows: auto;
+              grid-template-areas: "b-icon b-name";
+              .b-icon {
+                margin-top: -5px;
+                #copy-logo,
+                #done-logo{
+                  transition: all .35s ease-in-out;
+                }
 
-              // #done-logo{
-              //   left: 0;
-              //   position: absolute;
-              // }
-              
-            }
-            .b-name{
-              border : 2px red solid !important;
-            }
+                #done-logo{
+                  left: 0;
+                  position: absolute;
+                }
+              }
+              .b-name {
+                margin-top: -8px;
+              }
 
-            .b-icon.active #copy-logo{
-              transform: rotate( 180deg ) scale( 0 );
-              opacity: 0;
-            }
+              .b-icon.active #copy-logo {
+                transform: rotate(180deg) scale(0);
+                opacity: 0;
+              }
 
-            .b-icon:not( .active ) #done
-            {
-              transform: rotate( -180deg ) scale( 0 );
-              opacity: 0;
+              .b-icon:not(.active) #done {
+                transform: rotate(-180deg) scale(0);
+                opacity: 0;
+              }
             }
-            
           }
         }
       }
