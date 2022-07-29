@@ -22,7 +22,7 @@ class App extends React.Component {
 
     fetch(
        "https://gist.githubusercontent.com/Rockstar4400/" +
-        "7678c57b0cebc5f740973ecb7a2691d0/raw/1e4972813c52026694a2e8eecb83f37b5339e67b/" +
+        "7678c57b0cebc5f740973ecb7a2691d0/raw/4cf729b3f97f292b803508dc0c2ed57e8dd15261/" +
         "quotes.json"
     )
       .then((response) => response.json())

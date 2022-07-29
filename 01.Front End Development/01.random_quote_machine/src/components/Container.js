@@ -82,7 +82,7 @@ class Container extends React.Component {
 
     navigator.clipboard.writeText(quoute+author)
     .then(function() {
-      //openDialog('Copied successfully!');
+      alert('Copied successfully!');
     }, function(err) {
       console.error(err);
     });
