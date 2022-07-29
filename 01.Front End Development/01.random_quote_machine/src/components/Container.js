@@ -42,7 +42,7 @@ class Container extends React.Component {
       window.open(
         "https://www.facebook.com/sharer/sharer.php?u=" + url,
         "facebook-share-dialog",
-        "width=800,height=600", 
+        "width=800,height=600"
       );
       return false;
     });
@@ -50,10 +50,10 @@ class Container extends React.Component {
 
   sharingTelegram() {
     var tgButton = document.getElementById("tg-share-button");
-    
+
     tgButton.addEventListener("click", function () {
-      const quoute = document.getElementById('text').innerHTML;
-      const author =document.getElementById('author').innerHTML;
+      const quoute = document.getElementById("text").innerHTML;
+      const author = document.getElementById("author").innerHTML;
       window.open("https://t.me/share/url?url=" + quoute + author);
       return false;
     });
@@ -62,35 +62,37 @@ class Container extends React.Component {
   sharingTwitter() {
     var twButton = document.getElementById("tw-share-button");
     document.getElementById("tweet-quote").removeAttribute("href");
-    
 
     twButton.addEventListener("click", function () {
-      const quoute = document.getElementById('text').innerHTML;
-      const author =document.getElementById('author').innerHTML;
+      const quoute = document.getElementById("text").innerHTML;
+      const author = document.getElementById("author").innerHTML;
       window.open(
         "http://twitter.com/share?text=" +
-          quoute + author +
-          "&hashtags=GameOfThrones" 
+          quoute +
+          author +
+          "&hashtags=GameOfThrones"
       );
       return false;
     });
   }
 
   copyButton() {
-    const quoute = document.getElementById('text').innerHTML;
-    const author =document.getElementById('author').innerHTML;
+    const quoute = document.getElementById("text").innerHTML;
+    const author = document.getElementById("author").innerHTML;
 
-    navigator.clipboard.writeText(quoute+author)
-    .then(function() {
-      alert('Copied successfully!');
-    }, function(err) {
-      console.error(err);
+    navigator.clipboard.writeText(quoute + author).then(
+      function () {
+        alert("Copied successfully!");
+      },
+      function (err) {
+        console.error(err);
+      }
+    );
+
+    const btn = document.getElementById("btn-copy");
+    btn.addEventListener("click", function () {
+      this.classList.toggle("active");
     });
-    
-    const btn = document.getElementById('btn-copy');
-    btn.addEventListener('click', function(){
-      this.classList.toggle('active');
-    })
   }
 
   sharingGithub() {
@@ -127,7 +129,7 @@ class Container extends React.Component {
           <Card className="boxquoute" id="quote-box">
             <div className="message">
               <i className="quote left icon"></i>
-              <Message id="text" message={listItems[random].key}/>
+              <Message id="text" message={listItems[random].key} />
               <i className="quote right icon"></i>
             </div>
             <div className="main"></div>
@@ -135,21 +137,19 @@ class Container extends React.Component {
               <Author id="author" author={listItems[random].props.author} />
             </div>
             <div className="buttonsshare ">
-              
-              <div className="buttondivision buttondivision--share" 
-              onClick={this.copyButton}>
+              <div
+                className="buttondivision buttondivision--share"
+                onClick={this.copyButton}
+              >
                 <div className="buttonEffect">
                   <div className="bc3"></div>
-                  <ButtonShare
-                    className="bmessage"
-                    
-                  >
-                          <div className="b-icon" id="btn-copy">
-                            <i id="copy-logo">
-                              <svg viewBox="0 0 64 64" fill="white" width="35">
-                                <g>
-                                  <path
-                                    d="M51.51,18.001c-0.006-0.085-0.022-0.167-0.05-0.248c-0.012-0.034-0.02-0.067-0.035-0.1
+                  <ButtonShare className="bmessage">
+                    <div className="b-icon" id="btn-copy">
+                      <i id="copy-logo">
+                        <svg viewBox="0 0 64 64" fill="white" width="35">
+                          <g>
+                            <path
+                              d="M51.51,18.001c-0.006-0.085-0.022-0.167-0.05-0.248c-0.012-0.034-0.02-0.067-0.035-0.1
                                   c-0.049-0.106-0.109-0.206-0.194-0.291v-0.001l0,0c0,0-0.001-0.001-0.001-0.002L34.161,0.293c-0.086-0.087-0.188-0.148-0.295-0.197
                                   c-0.027-0.013-0.057-0.02-0.086-0.03c-0.086-0.029-0.174-0.048-0.265-0.053C33.494,0.011,33.475,0,33.453,0H22.177
                                   c-3.678,0-6.669,2.992-6.669,6.67v1.674h-4.663c-3.678,0-6.67,2.992-6.67,6.67V49.03c0,3.678,2.992,6.669,6.67,6.669h22.677
@@ -162,112 +162,110 @@ class Container extends React.Component {
                                   c-0.087-0.086-0.188-0.147-0.295-0.196c-0.029-0.013-0.058-0.021-0.088-0.031c-0.086-0.03-0.172-0.048-0.263-0.053
                                   c-0.021-0.002-0.04-0.013-0.062-0.013h-4.614V6.67c0-2.575,2.095-4.67,4.669-4.67h10.277v10.4c0,3.678,2.992,6.67,6.67,6.67h10.399
                                   v21.616C49.524,43.26,47.429,45.355,44.855,45.355z"
-                                  />
-                                </g>
-                              </svg>
-                            </i>
-                            <i id="done-logo">
-                              <svg viewBox="0 0 32 32" fill="white" width="30" id="done">
-                                <g>
-                                  <path d="M12.16,28a3,3,0,0,1-2.35-1.13L3.22,18.62a1,1,0,0,1,1.56-1.24l6.59,8.24A1,1,0,0,0,13,25.56L27.17,4.44a1,1,0,1,1,1.66,1.12L14.67,26.67A3,3,0,0,1,12.29,28Z"/>
-                                </g>
-                              </svg>
-                              </i>
-                          </div>
-                          <div className="b-name">
-                            <p>Copy</p>
-                          </div>
+                            />
+                          </g>
+                        </svg>
+                      </i>
+                      <i id="done-logo">
+                        <svg
+                          viewBox="0 0 32 32"
+                          fill="white"
+                          width="30"
+                          id="done"
+                        >
+                          <g>
+                            <path d="M12.16,28a3,3,0,0,1-2.35-1.13L3.22,18.62a1,1,0,0,1,1.56-1.24l6.59,8.24A1,1,0,0,0,13,25.56L27.17,4.44a1,1,0,1,1,1.66,1.12L14.67,26.67A3,3,0,0,1,12.29,28Z" />
+                          </g>
+                        </svg>
+                      </i>
+                    </div>
+                    <div className="b-name">
+                      <p>Copy</p>
+                    </div>
                   </ButtonShare>
                   <div className="bc4"></div>
                 </div>
               </div>
 
-              <div className="buttondivision buttondivision--share" 
+              <div
+                className="buttondivision buttondivision--share"
                 onClick={this.sharingTelegram}
-                id="tg-share-button">
-              <div className="buttonEffect">
-                <div className="bc3"></div>
-                <ButtonShare
-                  className="bmessage"
-                  
-                >
-                        <div className="b-icon">
-                          <i className="telegram plane icon"></i>
-                        </div>
-                        <div className="b-name">
-                          <p>Telegram</p>
-                        </div>
-                </ButtonShare>
-                <div className="bc4"></div>
-              </div>
+                id="tg-share-button"
+              >
+                <div className="buttonEffect">
+                  <div className="bc3"></div>
+                  <ButtonShare className="bmessage">
+                    <div className="b-icon">
+                      <i className="telegram plane icon"></i>
+                    </div>
+                    <div className="b-name">
+                      <p>Telegram</p>
+                    </div>
+                  </ButtonShare>
+                  <div className="bc4"></div>
+                </div>
               </div>
 
-              <div className="buttondivision buttondivision--share"
-              onClick={this.sharingFacebook}
-              id="fb-share-button">
-              <div className="buttonEffect">
-                <div className="bc3"></div>
-                <ButtonShare
-                  className="bmessage"
-                  
-                >
-                        <div className="b-icon">
-                          <i className="facebook icon"></i>
-                        </div>
-                        <div className="b-name">
-                          <p>Facebook</p>
-                        </div>
-                </ButtonShare>
-                <div className="bc4"></div>
-              </div>
+              <div
+                className="buttondivision buttondivision--share"
+                onClick={this.sharingFacebook}
+                id="fb-share-button"
+              >
+                <div className="buttonEffect">
+                  <div className="bc3"></div>
+                  <ButtonShare className="bmessage">
+                    <div className="b-icon">
+                      <i className="facebook icon"></i>
+                    </div>
+                    <div className="b-name">
+                      <p>Facebook</p>
+                    </div>
+                  </ButtonShare>
+                  <div className="bc4"></div>
+                </div>
               </div>
 
-              <div className="buttondivision buttondivision--share"
-              onClick={this.sharingTwitter}
-              id="tw-share-button">
-              <div className="buttonEffect">
-                <div className="bc3"></div>
-                <ButtonShare
-                  className="bmessage"
-                  
-                >
+              <div
+                className="buttondivision buttondivision--share"
+                onClick={this.sharingTwitter}
+                id="tw-share-button"
+              >
+                <div className="buttonEffect">
+                  <div className="bc3"></div>
+                  <ButtonShare className="bmessage">
+                    <div className="b-icon">
                       <a
                         id="tweet-quote"
                         href="https://twitter.com/intent/tweet"
-                      >
-                          <div className="b-icon">
-                            <i className="twitter icon"></i>
-                          </div>
-                          <div className="b-name">
-                            <p>Twitter</p>
-                          </div>
-                      </a>
-                </ButtonShare>
-                <div className="bc4"></div>
-              </div>
+                      ></a>
+                      <i className="twitter icon"></i>
+                    </div>
+                    <div className="b-name">
+                      <p>Twitter</p>
+                    </div>
+                  </ButtonShare>
+                  <div className="bc4"></div>
+                </div>
               </div>
 
-              <div className="buttondivision buttondivision--share"
-              onClick={this.sharingGithub}
-              id='gh-share-button'>
-              <div className="buttonEffect">
-                <div className="bc3"></div>
-                <ButtonShare className="bmessage">
-                      <a
-                        id="github-quote"
-                        href="https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine"
-                      >
-                          <div className="b-icon">
-                            <i className="github square icon"></i>
-                          </div>
-                          <div className="b-name">
-                            <p>Github</p>
-                          </div>
-                      </a>
-                </ButtonShare>
-                <div className="bc4"></div>
+              <div
+                className="buttondivision buttondivision--share"
+                onClick={this.sharingGithub}
+                id="gh-share-button"
+              >
+                <div className="buttonEffect">
+                  <div className="bc3"></div>
+                  <ButtonShare className="bmessage">
+                    <div className="b-icon">
+                      <i className="github square icon"></i>
+                    </div>
+                    <div className="b-name">
+                      <p>Github</p>
+                    </div>
+                  </ButtonShare>
+                  <div className="bc4"></div>
+                </div>
               </div>
-            </div>
             </div>
 
             <div id="new-quote"></div>
