@@ -10,10 +10,6 @@ import ContainerNoData from "./ContainerNoData";
 
 class Container extends React.Component {
   clickHandler = this.clickHandler.bind(this);
-  sharingFacebook = this.sharingFacebook.bind(this);
-  sharingTelegram = this.sharingTelegram.bind(this);
-  sharingTwitter = this.sharingTwitter.bind(this);
-  copyButton = this.copyButton.bind(this);
 
   clickHandler() {
     // Random colors
@@ -46,7 +42,7 @@ class Container extends React.Component {
       window.open(
         "https://www.facebook.com/sharer/sharer.php?u=" + url,
         "facebook-share-dialog",
-        "width=800,height=600"
+        "width=800,height=600", 
       );
       return false;
     });
@@ -54,34 +50,55 @@ class Container extends React.Component {
 
   sharingTelegram() {
     var tgButton = document.getElementById("tg-share-button");
-    var url = window.location.href;
+
+    const quoute = document.getElementById('text').innerHTML;
+    const author =document.getElementById('author').innerHTML;
 
     tgButton.addEventListener("click", function () {
-      window.open("https://t.me/share/url?url=" + url);
+      window.open("https://t.me/share/url?url=" + quoute + author);
       return false;
     });
   }
 
   sharingTwitter() {
     var twButton = document.getElementById("tw-share-button");
-    var url = window.location.href;
     document.getElementById("tweet-quote").removeAttribute("href");
+    const quoute = document.getElementById('text').innerHTML;
+    const author =document.getElementById('author').innerHTML;
 
     twButton.addEventListener("click", function () {
       window.open(
-        "http://twitter.com/share?text=Random Quote Machine&url=" +
-          url +
-          "&hashtags=react,javascript"
+        "http://twitter.com/share?text=" +
+          quoute + author +
+          "&hashtags=GameOfThrones" 
       );
       return false;
     });
   }
 
   copyButton() {
+    const quoute = document.getElementById('text').innerHTML;
+    const author =document.getElementById('author').innerHTML;
+
+    navigator.clipboard.writeText(quoute+author).then(function() {
+    }, function(err) {
+      console.error(err);
+    });
+    
     const btn = document.getElementById('btn-copy');
     btn.addEventListener('click', function(){
       this.classList.toggle('active');
     })
+  }
+
+  sharingGithub() {
+    var ghButton = document.getElementById("gh-share-button");
+    ghButton.addEventListener("click", function () {
+      window.open(
+        "https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine"
+      );
+      return false;
+    });
   }
 
   render() {
@@ -108,7 +125,7 @@ class Container extends React.Component {
           <Card className="boxquoute" id="quote-box">
             <div className="message">
               <i className="quote left icon"></i>
-              <Message id="text" message={listItems[random].key} />
+              <Message id="text" message={listItems[random].key}/>
               <i className="quote right icon"></i>
             </div>
             <div className="main"></div>
@@ -117,12 +134,13 @@ class Container extends React.Component {
             </div>
             <div className="buttonsshare ">
               
-              <div className="buttondivision buttondivision--share">
+              <div className="buttondivision buttondivision--share" 
+              onClick={this.copyButton}>
                 <div className="buttonEffect">
                   <div className="bc3"></div>
                   <ButtonShare
                     className="bmessage"
-                    copyButton={this.copyButton}
+                    
                   >
                           <div className="b-icon" id="btn-copy">
                             <i id="copy-logo">
@@ -162,13 +180,14 @@ class Container extends React.Component {
                 </div>
               </div>
 
-              <div className="buttondivision buttondivision--share">
+              <div className="buttondivision buttondivision--share" 
+                onClick={this.sharingTelegram}
+                id="tg-share-button">
               <div className="buttonEffect">
                 <div className="bc3"></div>
                 <ButtonShare
                   className="bmessage"
-                  sharingTelegram={this.sharingTelegram}
-                  id="tg-share-button"
+                  
                 >
                         <div className="b-icon">
                           <i className="telegram plane icon"></i>
@@ -181,13 +200,14 @@ class Container extends React.Component {
               </div>
               </div>
 
-              <div className="buttondivision buttondivision--share">
+              <div className="buttondivision buttondivision--share"
+              onClick={this.sharingFacebook}
+              id="fb-share-button">
               <div className="buttonEffect">
                 <div className="bc3"></div>
                 <ButtonShare
                   className="bmessage"
-                  sharingFacebook={this.sharingFacebook}
-                  id="fb-share-button"
+                  
                 >
                         <div className="b-icon">
                           <i className="facebook icon"></i>
@@ -200,13 +220,14 @@ class Container extends React.Component {
               </div>
               </div>
 
-              <div className="buttondivision buttondivision--share">
+              <div className="buttondivision buttondivision--share"
+              onClick={this.sharingTwitter}
+              id="tw-share-button">
               <div className="buttonEffect">
                 <div className="bc3"></div>
                 <ButtonShare
                   className="bmessage"
-                  sharingTwitter={this.sharingTwitter}
-                  id="tw-share-button"
+                  
                 >
                       <a
                         id="tweet-quote"
@@ -224,11 +245,12 @@ class Container extends React.Component {
               </div>
               </div>
 
-              <div className="buttondivision buttondivision--share">
+              <div className="buttondivision buttondivision--share"
+              onClick={this.sharingGithub}
+              id='gh-share-button'>
               <div className="buttonEffect">
                 <div className="bc3"></div>
                 <ButtonShare className="bmessage">
-
                       <a
                         id="github-quote"
                         href="https://github.com/Rockstar4400/Freecodecamp-Projects/tree/main/01.Front%20End%20Development/01.random_quote_machine"
