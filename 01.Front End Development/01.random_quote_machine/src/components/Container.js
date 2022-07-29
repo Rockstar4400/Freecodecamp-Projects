@@ -50,11 +50,10 @@ class Container extends React.Component {
 
   sharingTelegram() {
     var tgButton = document.getElementById("tg-share-button");
-
-    const quoute = document.getElementById('text').innerHTML;
-    const author =document.getElementById('author').innerHTML;
-
+    
     tgButton.addEventListener("click", function () {
+      const quoute = document.getElementById('text').innerHTML;
+      const author =document.getElementById('author').innerHTML;
       window.open("https://t.me/share/url?url=" + quoute + author);
       return false;
     });
@@ -63,10 +62,11 @@ class Container extends React.Component {
   sharingTwitter() {
     var twButton = document.getElementById("tw-share-button");
     document.getElementById("tweet-quote").removeAttribute("href");
-    const quoute = document.getElementById('text').innerHTML;
-    const author =document.getElementById('author').innerHTML;
+    
 
     twButton.addEventListener("click", function () {
+      const quoute = document.getElementById('text').innerHTML;
+      const author =document.getElementById('author').innerHTML;
       window.open(
         "http://twitter.com/share?text=" +
           quoute + author +
