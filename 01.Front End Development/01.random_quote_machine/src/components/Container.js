@@ -35,16 +35,17 @@ class Container extends React.Component {
   }
 
   sharingFacebook() {
+    var fbButton = document.getElementById("fb-share-button");
     var url = window.location.href;
 
-    document.getElementById('fb-share-button').onclick = 
-    function() {
-      window.FB.ui({
-        display: 'popup',
-        method: 'share',
-        href: url
-      }, function(response){});
-    }
+    fbButton.addEventListener("click", function () {
+      window.open(
+        "https://www.facebook.com/sharer/sharer.php?u=" + url,
+        "facebook-share-dialog",
+        "width=800,height=600", 
+      );
+      return false;
+    });
   }
 
   sharingTelegram() {
