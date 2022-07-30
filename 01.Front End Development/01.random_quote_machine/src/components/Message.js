@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Message = (props) => {
+const Message = ({ id, message}) => {
   return (
-      <div id={props.id}>
-          {props.message}
+      <div id={id}>
+          {message}
       </div>
       );
   }
